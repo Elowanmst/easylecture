@@ -17,44 +17,50 @@ La base de données est :
 Les fichiers multimédias (comme les images de produits ou les avatars) sont gérés grâce à la
 bibliothèque Spatie Laravel Medialibrary
 
+La gestion de l'admin est géré par filament
+
 
 ## mise en place / installation
 
 ### installation des dependances
-````
+````bash
 composer install
+
+npm install 
+
+npm run build
 ````
 
 ### fichier .env
-````
+````bash
 cp .env.example .env
 ````
 
 ### key generate
-````
+````bash
 php artisan key:generate
 ````
 
-
 ### migration BDD
 
-````
+````bash
 php artisan migrate
 ````
 
-### lancement du server 
-````
-php artisan serve
+### lancement
+````bash
+npm run dev # lancement du front 
+php artisan serve # lancement du server (pas important)
 ````
 
 ### resumé
 pour lancer le projet vous devez lancer ses commandes ; 
-````
-composer install //dependances
-cp .env.example .env //creation du .env
-php artisan key:generate //generation de la clé
-php artisan migrate //si besoin, si il y a une des migration de faite
-php artisan serve //lancement du serveur 
+````bash
+composer install # dependances
+cp .env.example .env # creation du .env
+php artisan key:generate # generation de la clé
+php artisan migrate # si besoin, si il y a une des migration de faite
+php artisan serve # lancement du serveur 
 ````
 
 
