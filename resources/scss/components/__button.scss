@@ -6,30 +6,43 @@
     border-width: variables.$border-width;
     border-style: variables.$border-style;
     cursor: pointer;
-    transition: transform 0.5s ease-in-out;
+    transition: variables.$transition;
 
     &--primary {
         background-color: variables.$primary-background-color;
         border-color: variables.$primary-color;
-        color: white;
+        color: variables.$text-light;
     }
 
     &--secondary {
         background-color: variables.$secondary-background-color;
         border-color: variables.$secondary-color;
-        color: white;
+        color: variables.$text-light;
     }
 
     &--transparent {
         background-color: transparent;
-        border-color: white;
-        color: white;
+        border-color: variables.$text-light;
+        color: variables.$text-light;
     }
 
     &--success {
         background-color: variables.$success-color;
         border : none;
-        color: white;
+        color: variables.$text-light;
+    }
+
+    &--dark {
+        background-color: variables.$text-dark;
+        border : none;
+        color: variables.$text-light;
+    }
+
+    &--circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: variables.$border-radius-circle;
     }
 
     &:hover{
