@@ -6,10 +6,34 @@
     border-width: variables.$border-width;
     border-style: variables.$border-style;
     cursor: pointer;
+    transition: transform 0.5s ease-in-out;
 
-    &.button--primary {
+    &--primary {
         background-color: variables.$primary-background-color;
         border-color: variables.$primary-color;
         color: white;
     }
+
+    &--secondary {
+        background-color: variables.$secondary-background-color;
+        border-color: variables.$secondary-color;
+        color: white;
+    }
+
+    &--transparent {
+        background-color: transparent;
+        border-color: white;
+        color: white;
+    }
+
+    &--success {
+        background-color: variables.$success-color;
+        border : none;
+        color: white;
+    }
+
+    &:hover{
+        transform: scale(1.1);
+    }
 }
+

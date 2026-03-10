@@ -1,5 +1,17 @@
+// -- Color variables --
 $primary-color: rgb(255, 68, 56);
+$primary-color-dark: darken($primary-color, 10%);
 $primary-background-color: rgba($primary-color, 0.15);
+
+$secondary-color: rgb(107, 107, 107);
+$secondary-color-dark: darken($secondary-color, 10%);
+$secondary-background-color: rgba($secondary-color, 0.15);
+
+$success-color: rgb(45, 160, 62);
+$success-color-dark: darken($success-color, 10%);
+$success-background-color: rgba($success-color, 0.15);
+
+// -- Border variables --
 $border-radius: 30px;
 $border-width: 1px;
 $border-style: solid;
