@@ -1,8 +1,15 @@
-.button .button--primary {
-    background-color: rgba(255, 68, 56, 0.15);
-    color: white;
+@use '_variables';
+
+.button {
     padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    border: 1px solid rgba(255, 68, 56, 1);
+    border-radius: variables.$border-radius;
+    border-width: variables.$border-width;
+    border-style: variables.$border-style;
     cursor: pointer;
+
+    &.button--primary {
+        background-color: variables.$primary-background-color;
+        border-color: variables.$primary-color;
+        color: white;
+    }
 }
