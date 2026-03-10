@@ -18,6 +18,8 @@
 
     <body>
 
+        @include("components.header")
+
         <main> @yield('content') </main>
 
 
