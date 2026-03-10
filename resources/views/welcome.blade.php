@@ -12,8 +12,11 @@
                     complications — juste toi, un livre, et une expérience fluide 
                     pensée pour les lecteurs modernes.
                 </p>
-                <button type="submit" class="button button--primary">Commencer à acheter</button>
-                <button type="submit" class="button button--secondary">Creer son compte</button>
+
+                <div class="button__list">
+                    <a href="#" class="button button--primary">Commencer à acheter</a>
+                    <a href="#" class="button button--secondary">Creer son compte</a>
+                </div>
             </div>
 
             <div class="welcome__image">
