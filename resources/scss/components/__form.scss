@@ -1,18 +1,9 @@
+@use '_variables';
 
-$primary: #8B1A1A;
-$primary-border: #c0392b;
-$bg-card: #2a2a2a;
-$bg-input: #e8e8e8;
-$text-light: #ffffff;
-$text-dark: #1a1a1a;
-$text-link: #4a9edd;
-$border-radius-full: 9999px;
-$border-radius-card: 1.5rem;
-$transition: all 0.2s ease-in-out;
 
 .form-card {
-    background-color: $bg-card;
-    border-radius: $border-radius-card;
+    background-color: variables.$bg-card;
+    border-radius: variables.$border-radius-card;
     padding: 2.5rem 2rem;
     width: 100%;
     max-width: 480px;
@@ -30,18 +21,18 @@ $transition: all 0.2s ease-in-out;
         width: 2.2rem;
         height: 2.2rem;
         border-radius: 50%;
-        background-color: $text-dark;
-        color: $text-light;
+        background-color: variables.$text-dark;
+        color: variables.$text-light;
         border: none;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 1rem;
-        transition: $transition;
+        transition: variables.$transition;
 
         &:hover {
-            background-color: lighten($text-dark, 20%);
+            background-color: variables.$text-dark-light;
         }
     }
 
@@ -49,7 +40,7 @@ $transition: all 0.2s ease-in-out;
     &__title {
         font-size: 2.5rem;
         font-weight: 900;
-        color: $text-light;
+        color: variables.$text-light;
         text-align: center;
         font-family: 'Press Start 2P', monospace; // police pixel
         letter-spacing: 0.05em;
@@ -72,7 +63,7 @@ $transition: all 0.2s ease-in-out;
     &__label {
         font-size: 0.95rem;
         font-weight: 700;
-        color: $text-light;
+        color: variables.$text-light;
     }
 
    
@@ -80,29 +71,29 @@ $transition: all 0.2s ease-in-out;
         position: relative;
         display: flex;
         align-items: center;
-        background-color: $bg-input;
-        border-radius: $border-radius-full;
+        background-color: variables.$bg-input;
+        border-radius: variables.$border-radius-full;
         padding: 0 1rem;
 
         &:focus-within {
-            box-shadow: 0 0 0 2px $primary-border;
+            box-shadow: 0 0 0 2px variables.$primary-color-dark;
         }
     }
 
     &__icon {
-        color: $text-dark;
+        color: variables.$text-dark;
         font-size: 1.1rem;
         flex-shrink: 0;
         margin-right: 0.5rem;
     }
 
     &__icon-right {
-        color: $text-dark;
+        color: variables.$text-dark;
         font-size: 1.1rem;
         flex-shrink: 0;
         margin-left: 0.5rem;
         cursor: pointer;
-        transition: $transition;
+        transition: variables.$transition;
 
         &:hover {
             opacity: 0.6;
@@ -113,7 +104,7 @@ $transition: all 0.2s ease-in-out;
         width: 100%;
         padding: 0.8rem 0;
         font-size: 0.95rem;
-        color: $text-dark;
+        color: variables.$text-dark;
         background: transparent;
         border: none;
         outline: none;
@@ -122,7 +113,7 @@ $transition: all 0.2s ease-in-out;
     
     &__link {
         font-size: 0.85rem;
-        color: $text-link;
+        color: variables.$text-link;
         text-decoration: none;
         cursor: pointer;
 
@@ -133,7 +124,7 @@ $transition: all 0.2s ease-in-out;
 
     &__register {
         font-size: 0.9rem;
-        color: $text-link;
+        color: variables.$text-link;
         text-align: center;
         text-decoration: none;
         cursor: pointer;
@@ -143,28 +134,6 @@ $transition: all 0.2s ease-in-out;
         }
     }
 
-    
-    &__submit {
-        width: 60%;
-        margin: 0 auto;
-        padding: 0.85rem;
-        font-size: 1rem;
-        font-weight: 700;
-        color: $text-light;
-        background-color: $primary;
-        border: 2px solid $primary-border;
-        border-radius: $border-radius-full;
-        cursor: pointer;
-        transition: $transition;
-        display: block;
-
-        &:hover {
-            background-color: lighten($primary, 8%);
-            transform: translateY(-2px);
-        }
-
-        &:active {
-            transform: translateY(0);
-        }
-    }
+  
+   
 }

@@ -12,6 +12,14 @@
         </div>
 
         <div class="form__group">
+            <label class="form__label">E mail :</label>
+            <div class="form__input-wrapper">
+                <span class="form__icon">👤</span>
+                <input type="email" class="form__input">
+            </div>
+        </div>
+
+        <div class="form__group">
             <label class="form__label">Mot de Passe :</label>
             <div class="form__input-wrapper">
                 <span class="form__icon">🔑</span>
@@ -23,6 +31,6 @@
 
         <a href="#" class="form__register">Pas de Compte ? Créer-en un !</a>
 
-        <button type="submit" class="button button--primary">Se Connecter</button>
+        @include('./components/button', ['text' => 'Se Connecter'])
     </form>
 </div>

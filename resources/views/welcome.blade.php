@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -276,9 +275,11 @@
             <div class="h-14.5 hidden lg:block"></div>
         @endif
 
-        @include("./components/button")
+        @include("./components/button", ['text' => 'Se'])
 
         @include("./components/form")
+
+        @include("./components/formdeux")
 
     </body>
 

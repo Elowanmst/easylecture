@@ -1,1 +1,1 @@
-<button class="button button--primary">Button</button>
+<button class="button button--primary">{{ $text }}</button>
