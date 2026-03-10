@@ -9,7 +9,7 @@
     cursor: pointer;
     text-decoration: none;
     transition: variables.$transition;
-    font-size: variables.$font-size-base;
+    font-size: variables.$font-size-small;
 
     &--primary {
         background-color: variables.$primary-background-color;
@@ -48,12 +48,21 @@
         border-radius: variables.$border-radius-circle;
     }
 
+    &--big {
+        font-size: variables.$font-size-base;
+    }
+
     &__footer{
         border-radius : 0;
         background-color: variables.$primary-color;
         border-color: variables.$primary-color;
         color: variables.$text-light;
         margin-left:0;
+    }
+
+    &__list{
+        display:flex;
+        gap: 1rem;
     }
 
     &:hover{

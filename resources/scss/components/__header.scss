@@ -3,6 +3,7 @@
 .header {
     position:sticky;
     top: 0;
+    padding : 0.5rem 0;
     margin-bottom: 1rem;
     background-color: variables.$bg-card;
     border-bottom: variables.$color-grey variables.$border-width variables.$border-style;
@@ -39,9 +40,21 @@
     &__nav-links {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 2.5rem;
         list-style: none;
         margin: 0;
         padding: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        &__nav {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        &__nav-links {
+            flex-direction: column;
+            gap: 1rem;
+        }  
     }
 }
