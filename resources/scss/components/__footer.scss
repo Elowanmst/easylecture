@@ -3,6 +3,7 @@
 .footer {
     background-color: variables.$bg-card;
     border-top: variables.$color-grey variables.$border-width variables.$border-style;
+    margin-top: 2rem;
 
     &__logo {
         color: variables.$primary-color;
