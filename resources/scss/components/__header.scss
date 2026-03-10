@@ -1,0 +1,29 @@
+@use '_variables';
+
+.header {
+    
+    &__navbar {
+        background-color: variables.$bg-card;
+        padding: 0.75rem 2rem;
+        margin: 0 auto;
+        display: flex;
+        gap: 1.5rem;
+
+        &__logo {
+            color: variables.$text-light;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        &-link {
+            color: variables.$text-light;
+            text-decoration: none;
+            font-weight: 500;
+            transition: variables.$transition;
+
+            &:hover {
+                color: variables.$text-link;
+            }
+        }
+    }
+}
