@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('body-class', 'body--with-lines body--content-centered')
+
 @section('content')
 
 <div class="form-card">

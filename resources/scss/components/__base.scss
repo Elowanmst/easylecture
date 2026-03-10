@@ -10,8 +10,42 @@
     }
 
     &--with-lines {
-        background-color: variables.$bg-card;
+        
+
+        // overflow: hidden;
+        // position: relative;
+
+        // &::before {
+        //     content: '';
+        //     position: absolute;
+        //     top: -80px;
+        //     left: -20px;
+        //     width: 55px; 
+        //     height: 500px;
+        //     background-color: variables.$primary-color;
+        //     transform: rotate(30deg);
+        //     box-shadow: 80px 0 0 variables.$primary-color; 
+        // }
+
+        // &::after {
+        //     content: '';
+        //     position: fixed;
+        //     bottom: -80px;
+        //     right: -40px;
+        //     width: 55px;
+        //     height: 420px;
+        //     background-color: variables.$primary-color;
+        //     transform: rotate(30deg);
+        // }
+
+        //second method
+        background: linear-gradient(135deg, variables.$bg-card 10vw, variables.$primary-color 10vw 15vw, transparent 0),
+                    linear-gradient(135deg, variables.$bg-card 17vw, variables.$primary-color 17vw 22vw, transparent 0),
+                    linear-gradient(135deg, variables.$bg-card 95vw, variables.$primary-color 95vw 100vw, variables.$bg-card 0vw);
+
+        background-repeat: no-repeat;
     }
+
 
     &--content-centered {
         main {

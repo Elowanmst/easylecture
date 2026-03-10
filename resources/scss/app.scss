@@ -4,9 +4,15 @@
 @use "components/_button";
 @use "components/_form";
 @use "components/_header";
+@use "components/_variables";
 
 body {
     font-family: 'Jersey 25', sans-serif;
-    background-color: white;
+    background-color: variables.$bg-card;
+    color: variables.$text-light;
+}
+
+.text-highlight {
+    color: variables.$primary-color;
 }
 
