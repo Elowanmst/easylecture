@@ -48,6 +48,14 @@
         border-radius: variables.$border-radius-circle;
     }
 
+    &__footer{
+        border-radius : 0;
+        background-color: variables.$primary-color;
+        border-color: variables.$primary-color;
+        color: variables.$text-light;
+        margin-left:0;
+    }
+
     &:hover{
         transform: scale(1.1);
     }
