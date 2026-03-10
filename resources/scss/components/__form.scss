@@ -12,7 +12,9 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    
+    border-color: variables.$color-grey;
+    border-width: variables.$border-width;
+    border-style: variables.$border-style;
 
     
     &__back {
