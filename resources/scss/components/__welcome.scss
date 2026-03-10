@@ -1,0 +1,40 @@
+@use '_variables';
+
+.welcome {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+
+    &__text {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        h1 {
+            font-size: 5.5rem;
+            color: variables.$text-light;
+            margin: 0;
+        }
+        p {
+            font-size: 1.5rem;
+            color: variables.$text-light;
+            margin: 1;
+        }
+    }
+
+    &__image {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+}
