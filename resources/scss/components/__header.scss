@@ -2,7 +2,6 @@
 
 .header {
     background-color: variables.$bg-card;
-    transition: variables.$transition;
     
     &__nav {
         display: flex;
@@ -15,18 +14,20 @@
         &__logo {
             color: variables.$text-light;
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 2.5rem;
             font-weight: 700;
         }
 
         &-link {
+            display: inline-block;
             color: variables.$text-light;
             text-decoration: none;
+            font-size: variables.$font-size-base;
             font-weight: 500;
             transition: variables.$transition;
 
             &:hover {
-                transform: scale(1.1);
+                transform: scale(1.05);
             }
         }
     }

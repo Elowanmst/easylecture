@@ -9,6 +9,7 @@
     cursor: pointer;
     text-decoration: none;
     transition: variables.$transition;
+    font-size: variables.$font-size-base;
 
     &--primary {
         background-color: variables.$primary-background-color;
