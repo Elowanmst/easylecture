@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('content')
+
 <div class="form-card">
     <button class="button button--dark button--circle form-card__back">←</button>
     <h1 class="form-card__title">Login</h1>
@@ -28,3 +30,5 @@
         <button type="submit" class="button button--primary">Se Connecter</button>
     </form>
 </div>
+
+@endsection
