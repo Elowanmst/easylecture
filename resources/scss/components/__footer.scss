@@ -2,6 +2,38 @@
 
 .footer {
     background-color: variables.$bg-card;
+    border-top: variables.$color-grey variables.$border-width variables.$border-style;
+
+    &__logo {
+        color: variables.$primary-color;
+        text-decoration: none;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    &__description {
+        color: variables.$text-light;
+        font-size : variables.$font-size-small;
+    }
+
+    &__columns{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        list-style: none;
+        margin: 2rem 0;
+        padding: 0;
+        justify-content: space-between;
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+
+        &--centered {
+            justify-content: center;
+        }
+    }
     
     &__nav {
         display: flex;
@@ -10,39 +42,43 @@
         gap: 1.5rem;
         padding: 0.75rem 0;
         margin: 0 auto;
+    }
 
-        &__logo {
-            color: variables.$text-light;
-            text-decoration: none;
-            font-size: 1.75rem;
-            font-weight: 700;
-        }
+    &__paragraph {
+        font-size : variables.$font-size-small;
+        color: variables.$text-light;
+        text-align: center;
+    }
 
-        &-title {
-            border-width: variables.$border-width;
-            border-style: variables.$border-style;
-            border-color : variables.$primary-color;
-            padding : 0.5rem;
-            font-size : variables.$font-size-small;
-            color: variables.$text-light;
-        }
+    &__newsletter {
+        display:flex;
+    }
 
-        &-link {
-            display: inline-block;
-            color: variables.$text-light;
-            text-decoration: none;
-            font-size: variables.$font-size-small;
-            font-weight: 500;
-            transition: variables.$transition;
+    &__link {
+        display: inline-block;
+        color: variables.$text-light;
+        text-decoration: none;
+        font-size: variables.$font-size-small;
+        font-weight: 500;
+        transition: variables.$transition;
 
-            &:hover {
-                transform: scale(1.05);
-            }
+        &:hover {
+            transform: scale(1.05);
         }
     }
 
-    &__nav-links {
+    &__title {
+        border-width: variables.$border-width;
+        border-style: variables.$border-style;
+        border-color : variables.$primary-color;
+        padding : 0.5rem;
+        font-size : variables.$font-size-small;
+        color: variables.$text-light;
+    }
+
+    &__links {
         display: flex;
+        flex-direction: column;
         align-items: center;
         gap: 1rem;
         list-style: none;

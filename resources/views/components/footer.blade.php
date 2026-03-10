@@ -1,20 +1,42 @@
-<header class="footer">
+<footer class="footer">
     <div class="container">
-        <nav class="footer__nav">
-            <a href="#" class="footer__nav__logo">EasyLecture</a>
-            <ul class="footer__nav-links">
-                <p class="footer__nav-title">Pages</p>
-                <li><a href="#" class="footer__nav-link">Boutique</a></li>
-                <li><a href="#" class="footer__nav-link">Contact FAQ</a></li>
-                <li><a href="#" class="footer__nav-link">Login</a></li>
-            </ul>
-            <ul class="footer__nav-links">
-                <p class="footer__nav-title">Informations</p>
-                <li><a href="#" class="footer__nav-link">Mention Légale</a></li>
-                <li><a href="#" class="footer__nav-link">Condition Général de Ventes</a></li>
-                <li><a href="#" class="footer__nav-link">Protection des données</a></li>
-                <li><a href="#" class="footer__nav-link">Gestion des Cookie</a></li>
-            </ul>
-        </nav>
+        <div class="footer__columns">
+            <div class="footer__column footer__column--centered">
+                <a href="#" class="footer__logo">EasyLecture</a>
+                <p class="footer__description">Lire, découvrir, vendre <br> Directement ici</p>
+            </div>
+            <div class="footer__column">
+                <nav>
+                    <ul class="footer__links">
+                        <p class="footer__title">Pages</p>
+                        <li><a href="#" class="footer__link">Accueil</a></li>
+                        <li><a href="#" class="footer__link">Boutique</a></li>
+                        <li><a href="#" class="footer__link">Contact FAQ</a></li>
+                        <li><a href="#" class="footer__link">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__column">
+                <nav>
+                    <ul class="footer__links">
+                        <p class="footer__title">Informations</p>
+                        <li><a href="#" class="footer__link">Mention Légale</a></li>
+                        <li><a href="#" class="footer__link">Condition Général de Ventes</a></li>
+                        <li><a href="#" class="footer__link">Protection des données</a></li>
+                        <li><a href="#" class="footer__link">Gestion des Cookie</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__column">
+                <ul class="footer__links">
+                    <p class="footer__title">La NewsLetter</p>
+                    <p class="footer__paragraph">2 fois par semaines, de nouvelle histoire à decouvrir</p>
+                    <div class="footer__newsletter">
+                        <input class="footer__nav-input" type="text" placeholder="Email"></input>
+                        <button class="button__footer">S'inscrire</button>
+                    </div>
+                </ul>
+            </div>
+        </div>
     </div>
-</header>
+</footer>
