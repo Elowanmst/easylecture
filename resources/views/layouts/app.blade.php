@@ -16,7 +16,7 @@
         @endif
     </head>
 
-    <body>
+    <body class="body @yield('body-class')">
 
         @include("components.header")
 
