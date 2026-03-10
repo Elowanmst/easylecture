@@ -1,16 +1,20 @@
 @use '_variables';
 
 .header {
+    background-color: variables.$bg-card;
+    transition: variables.$transition;
     
-    &__navbar {
-        background-color: variables.$bg-card;
-        padding: 0.75rem 2rem;
-        margin: 0 auto;
+    &__nav {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
         gap: 1.5rem;
+        padding: 0.75rem 0;
+        margin: 0 auto;
 
         &__logo {
             color: variables.$text-light;
+            text-decoration: none;
             font-size: 1.5rem;
             font-weight: 700;
         }
@@ -22,8 +26,17 @@
             transition: variables.$transition;
 
             &:hover {
-                color: variables.$text-link;
+                transform: scale(1.1);
             }
         }
+    }
+
+    &__nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
     }
 }
