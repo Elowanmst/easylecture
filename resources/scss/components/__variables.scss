@@ -15,3 +15,16 @@ $success-background-color: rgba($success-color, 0.15);
 $border-radius: 30px;
 $border-width: 1px;
 $border-style: solid;
+
+
+
+
+$bg-card: #2a2a2a;
+$bg-input: #e8e8e8;
+$text-light: #ffffff;
+$text-dark: #1a1a1a;
+$text-dark-light: lighten($text-dark, 20%);
+$text-link: #4a9edd;
+$border-radius-full: 9999px;
+$border-radius-card: 1.5rem;
+$transition: all 0.2s ease-in-out;

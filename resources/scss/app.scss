@@ -1,6 +1,8 @@
-@use 'components/__button';
+@use "components/_button";
+@use "components/_form";
 
 body {
     font-family: var(--font-sans);
-    background-color: black;
+    background-color: white;
 }
+
