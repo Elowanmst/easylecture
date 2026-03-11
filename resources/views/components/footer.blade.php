@@ -20,7 +20,7 @@
                 <nav>
                     <ul class="footer__links">
                         <p class="footer__title">Informations</p>
-                        <li><a href="{{ url('/mentions-legales') }}" class="footer__link">Mention Légale</a></li>
+                        <li><a href="{{ url('/mention-legale') }}" class="footer__link">Mention Légale</a></li>
                         <li><a href="#" class="footer__link">Condition Général de Ventes</a></li>
                         <li><a href="#" class="footer__link">Protection des données</a></li>
                         <li><a href="#" class="footer__link">Gestion des Cookie</a></li>
@@ -32,7 +32,7 @@
                     <p class="footer__title">La NewsLetter</p>
                     <p class="footer__paragraph">2 fois par semaines, de nouvelle histoire à decouvrir</p>
                     <div class="footer__newsletter">
-                        <input class="footer__nav-input" type="text" placeholder="Email"></input>
+                        <input class="footer__nav--input" type="text" placeholder="Email"></input>
                         <button class="button__footer">S'inscrire</button>
                     </div>
                 </ul>

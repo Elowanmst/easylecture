@@ -43,6 +43,11 @@
         gap: 1.5rem;
         padding: 0.75rem 0;
         margin: 0 auto;
+
+        &--input{
+            border: variables.$border-width variables.$border-style variables.$primary-color;
+            padding : 0.2rem;
+        }
     }
 
     &__paragraph {
