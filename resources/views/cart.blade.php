@@ -57,13 +57,15 @@
                 <span>X.XX€</span>
             </div>
             <hr>
-            <a href="{{ url('/') }}" class="btn btn-secondary">← Continuer mes achats</a>
-            <a href="#" class="btn btn-primary">Commander</a>
+            <div class="btn">
+                <div>
+                    <a href="{{ url('/') }}" class="button button--secondary">← Continuer mes achats</a>
+                    <a href="#" class="button button--success">Commander</a>
+                </div>
+            </div>
         </div>
 
     </div>
-
-    <a href="{{ url('/') }}" class="btn">Retour à la boutique</a>
 
 </div>
 

@@ -32,6 +32,33 @@
     width: 60%;
 }
 
+.summary-line {
+    margin-top: 10px;
+    margin-bottom: 10px;;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+
+    > div{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .button {
+            width: 90%;
+            text-align: center;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+    }
+}
+
 .cart-item-info,
 .cart-item-qty,
 .cart-item-total {
