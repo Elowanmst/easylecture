@@ -64,6 +64,10 @@
         border-radius: variables.$border-radius-full;
         padding: 0 1rem;
 
+        &:has(textarea) {
+        border-radius: variables.$border-radius;
+        }
+
         &:focus-within {
             box-shadow: 0 0 0 2px variables.$primary-color-dark;
         }

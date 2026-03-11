@@ -20,6 +20,8 @@
 
         @include("components.header")
 
+        <div class="scroll-watcher"></div>
+
         <main> @yield('content') </main>
 
         @include("components.footer")

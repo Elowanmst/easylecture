@@ -1,4 +1,4 @@
-@use '_variables';
+@use '_variables' as *;
 
 .body {
     display: flex;
@@ -7,6 +7,12 @@
 
     main {
         flex: 1;
+    }
+
+    h1 {
+        font-size: 3rem;
+        color: $text-light;
+        text-align: center;
     }
 
     &--with-lines {
@@ -39,9 +45,9 @@
         // }
 
         //second method
-        background: linear-gradient(135deg, variables.$bg-card 10vw, variables.$primary-color 10vw 15vw, transparent 0),
-                    linear-gradient(135deg, variables.$bg-card 17vw, variables.$primary-color 17vw 22vw, transparent 0),
-                    linear-gradient(135deg, variables.$bg-card 95vw, variables.$primary-color 95vw 100vw, variables.$bg-card 0vw);
+        background: linear-gradient(135deg, $bg-card 10vw, $primary-color 10vw 15vw, transparent 0),
+                    linear-gradient(135deg, $bg-card 17vw, $primary-color 17vw 22vw, transparent 0),
+                    linear-gradient(135deg, $bg-card 95vw, $primary-color 95vw 100vw, $bg-card 0vw);
 
         background-repeat: no-repeat;
     }

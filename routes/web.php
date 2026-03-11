@@ -17,3 +17,11 @@ Route::get('/register', function () {
 Route::get('/newmdp', function () {
     return view('newmdp');
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/cart', function () {
+    return view('cart');
+});
