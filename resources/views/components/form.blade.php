@@ -6,18 +6,18 @@
 
     <form class="form">
         <div class="form__group">
-            <label class="form__label">Nom Utilisateur :</label>
+            <label id="username-forgetmdp" class="form__label">Nom Utilisateur :</label>
             <div class="form__input-wrapper">
                 <span class="form__icon">👤</span>
-                <input type="text" class="form__input">
+                <input id="username-forgetmdp" type="text" class="form__input">
             </div>
         </div>
 
         <div class="form__group">
-            <label class="form__label">Mot de Passe :</label>
+            <label for="mdp-forgetmdp" class="form__label">Mot de Passe :</label>
             <div class="form__input-wrapper">
                 <span class="form__icon">🔑</span>
-                <input type="password" class="form__input">
+                <input id="mdp-forgetmdp" type="password" class="form__input">
                 <span class="form__icon-right">afficher</span>
             </div>
             <a href="#" class="form__link">Mot de Passe Oublié ?</a>

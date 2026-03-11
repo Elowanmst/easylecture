@@ -11,10 +11,10 @@
 
     <form class="form">
         <div class="form__group">
-            <label class="form__label">email :</label>
+            <label for="email-forgetmdp" class="form__label">email :</label>
             <div class="form__input-wrapper">
                 <span class="form__icon">👤</span>
-                <input type="text" class="form__input">
+                <input id="email-forgetmdp" type="text" class="form__input">
             </div>
         </div>
 
