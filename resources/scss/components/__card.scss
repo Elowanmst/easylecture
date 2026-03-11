@@ -1,0 +1,27 @@
+@use '_variables' as *;
+
+.card {
+    background-color: $bg-card;
+    border-radius: $border-radius-card;
+    padding: 1rem;
+    color: $text-light;
+    border: white $border-width $border-style;
+}
+
+.product-card {
+    text-align: center;
+    transition: $transition;
+    
+
+    &__title {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        text-align: left;
+    }
+
+    &__price {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+}

@@ -8,6 +8,8 @@
 @use "components/_footer";
 @use "components/_welcome";
 @use "components/_cart";
+@use "_boutique";
+@use "components/_card";
 
 body {
     font-family: 'Jersey 25', sans-serif;

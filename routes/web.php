@@ -25,3 +25,6 @@ Route::get('/contact', function () {
 Route::get('/cart', function () {
     return view('cart');
 });
+Route::get('/boutique', function () {
+    return view('boutique');
+});

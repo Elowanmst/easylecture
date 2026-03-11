@@ -14,8 +14,8 @@
                 </p>
 
                 <div class="button__list">
-                    <a href="#" class="button button--primary">Commencer à acheter</a>
-                    <a href="#" class="button button--secondary">Creer son compte</a>
+                    <a href="#" class="button button--primary button--big">Commencer à acheter</a>
+                    <a href="#" class="button button--secondary button--big" >Creer son compte</a>
                 </div>
             </div>
 

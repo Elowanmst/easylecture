@@ -1,15 +1,28 @@
-.container {
-    width: 1200px;
-    margin: 0 auto;
-}
+@use "_variables" as *;
 
-@media screen and (max-width: 1200px) {
-    .container {
-        width: 900px;
+.container {
+    width: $mediascreen-xl;
+    margin: 0 auto;
+
+    &--large {
+        width: $mediascreen-xxl;
+        margin: 0 auto;
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: $mediascreen-xxl) {
+    .container--large {
+        width: $mediascreen-xl;
+    }
+}
+
+@media screen and (max-width: $mediascreen-xl) {
+    .container {
+        width: $mediascreen-l;
+    }
+}
+
+@media screen and (max-width: $mediascreen-l) {
     .container {
         width: 100%;
         padding: 0 1rem;
