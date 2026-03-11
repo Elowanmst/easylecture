@@ -42,3 +42,37 @@ body {
     }
 }
 
+
+
+//main content
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  z-index: 9999;
+
+  &:focus {
+    width: auto;
+    height: auto;
+    padding: 1em 1.5em;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    background-color: variables.$bg-card;
+    color: variables.$text-light;
+    border: 2px solid variables.$primary-color;
+    border-radius: variables.$border-radius-small;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    font-size: variables.$font-size-small;
+  }
+}
