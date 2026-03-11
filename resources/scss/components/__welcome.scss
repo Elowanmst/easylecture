@@ -1,10 +1,14 @@
 @use '_variables';
 
+
+
 .welcome {
     display: flex;
     align-items: center;
     gap: 2rem;
     padding: 2rem 0;
+    min-height: calc(100vh - (81px + 3rem));
+    box-sizing: border-box;
 
     &__text {
         width: 50%;
@@ -36,6 +40,37 @@
             height: 400px;
             object-fit: cover;
             border-radius: 50%;
+        }
+    }
+
+    animation: header-image-animation linear forwards; 
+    animation-timeline: view(); 
+    animation-range: exit;
+
+}
+
+@keyframes fade-out {
+    to { opacity: 0; }
+}
+
+@keyframes header-image-animation {
+    25% { opacity: 1; }
+    100% { opacity: 0; scale: 1.5; }
+}
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+    .card {
+        scale: .8; opacity  : 0;
+        animation: fade-in linear forwards;
+        animation-timeline: view();
+        animation-range: entry-crossing;  
+    }
+
+    @keyframes fade-in {
+        to {
+            scale: 1; opacity: 1;
         }
     }
 }

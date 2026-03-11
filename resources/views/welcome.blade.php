@@ -25,4 +25,15 @@
             </div>
         </div>
     </div>
+
+    <section class="container mb5">
+        <h2 class="mb4">Meilleures Ventes - Best Sellers</h2>
+        
+        <div class="shop-products">
+            @include("components/card-product-best-seller")
+            @include("components/card-product-best-seller")
+            @include("components/card-product-best-seller")
+        </div>
+    </section>
+
 @endsection
