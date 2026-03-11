@@ -38,6 +38,28 @@
                     <button class="cart-item-delete">🗑</button>
                 </div>    
             </article>
+            <article class="cart-item card">
+                <img src="" alt="article" class="cart-item-img">
+                <div class="cart-item-details">
+                    <div class="cart-item-info">
+                        <p class="cart-item-name">| article |</p>
+                        <p class="cart-item-price">X.XX€</p>
+                    </div>
+                    <div class="cart-item-qty">
+                        <p>Quantité</p>
+                        <div class="qty-controls">
+                            <button>−</button>
+                            <span>X</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <div class="cart-item-total">
+                        <span>Total</span>
+                        <p>X.XX€</p>
+                    </div>
+                    <button class="cart-item-delete">🗑</button>
+                </div>    
+            </article>
         </section>
 
         <div class="cart-summary card">
