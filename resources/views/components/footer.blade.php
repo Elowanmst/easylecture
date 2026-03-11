@@ -20,7 +20,7 @@
                 <nav>
                     <ul class="footer__links">
                         <p class="footer__title">Informations</p>
-                        <li><a href="#" class="footer__link">Mention Légale</a></li>
+                        <li><a href="{{ url('/mentions-legales') }}" class="footer__link">Mention Légale</a></li>
                         <li><a href="#" class="footer__link">Condition Général de Ventes</a></li>
                         <li><a href="#" class="footer__link">Protection des données</a></li>
                         <li><a href="#" class="footer__link">Gestion des Cookie</a></li>
