@@ -8,7 +8,7 @@
         <p class="shop-description">EasyLecture est la plateforme idéale pour découvrir des e-books inspirants et enrichissants. Explorez une sélection de livres numériques pour apprendre, progresser ou simplement vous divertir. Accédez instantanément à une bibliothèque moderne et pratique, pensée pour une lecture simple et accessible partout.</p>
         <div class="shop-filtre">
             <ul class="shop-filtre__links">
-                <li><select class="shop-filtre__link">
+                <li><select id="Genre" class="shop-filtre__link">
                     <option>Fiction</option>
                     <option>Non-Fiction</option>
                     <option>Science-Fiction</option>
@@ -22,6 +22,12 @@
                     <option>10-15ans</option>
                     <option>15-18ans</option>
                     <option>+18ans</option>
+                </select></li>
+                <li><select class="shop-filtre__link">
+                    <option>Gratuit</option>
+                    <option>Moins de 5€</option>
+                    <option>5€ - 10€</option>
+                    <option>10€ - 20€</option>
                 </select></li>
             </ul>
         </div>

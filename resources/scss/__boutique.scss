@@ -37,6 +37,10 @@
             transition: variables.$transition;
             text-decoration: none;
             border-radius: variables.$border-radius-small;
+
+            &:hover {
+                border-color: variables.$primary-color;
+            }
         }
     }
 
