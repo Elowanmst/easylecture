@@ -3,6 +3,8 @@
 
 @section('content')
 
+<div class="container">
+
     <h1>
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="9" cy="21" r="1"></circle>
@@ -14,29 +16,31 @@
     <div class="cart-layout">
 
         <section class="cart-items">
-            <article class="cart-item">
+            <article class="cart-item card">
                 <img src="" alt="article" class="cart-item-img">
-                <div class="cart-item-info">
-                    <p class="cart-item-name">| article |</p>
-                    <p class="cart-item-price">X.XX€</p>
-                </div>
-                <div class="cart-item-qty">
-                    <span>Quantité</span>
-                    <div class="qty-controls">
-                        <button>−</button>
-                        <span>X</span>
-                        <button>+</button>
+                <div class="cart-item-details">
+                    <div class="cart-item-info">
+                        <p class="cart-item-name">| article |</p>
+                        <p class="cart-item-price">X.XX€</p>
                     </div>
-                </div>
-                <div class="cart-item-total">
-                    <span>Total</span>
-                    <p>X.XX€</p>
-                </div>
-                <button class="cart-item-delete">🗑</button>
+                    <div class="cart-item-qty">
+                        <p>Quantité</p>
+                        <div class="qty-controls">
+                            <button>−</button>
+                            <span>X</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <div class="cart-item-total">
+                        <span>Total</span>
+                        <p>X.XX€</p>
+                    </div>
+                    <button class="cart-item-delete">🗑</button>
+                </div>    
             </article>
         </section>
 
-        <div class="cart-summary">
+        <div class="cart-summary card">
             <h2>Récapitulatif</h2>
             <div class="summary-line">
                 <span>Sous total :</span>
@@ -61,5 +65,6 @@
 
     <a href="{{ url('/') }}" class="btn">Retour à la boutique</a>
 
+</div>
 
 @endsection

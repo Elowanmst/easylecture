@@ -1,2 +1,42 @@
 @use '_variables' ; 
 
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    justify-content: space-between;
+
+
+    p {
+        margin: 0;
+    }
+
+
+    &__image {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: variables.$border-radius-card;
+    }
+}
+
+.cart-layout{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr ;
+    gap: 2rem;
+}
+
+.cart-item-details{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.cart-item-info,
+.cart-item-qty,
+.cart-item-total {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;    
+    align-items: center;
+}
