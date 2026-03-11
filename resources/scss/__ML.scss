@@ -1,0 +1,23 @@
+@use "components/_variables" as *;
+
+.ML {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0rem;
+    border : $border-width $border-style white;
+    border-radius: $border-radius-card;
+
+    &__title {
+        font-size: 2.5rem;
+        color: $text-light;
+        text-align: center;
+    }
+
+    &__description {
+        color: $text-light;
+        text-align: center;
+        max-width: 50rem;
+        padding-bottom: 3rem;
+    }
+}

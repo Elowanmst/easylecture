@@ -25,6 +25,13 @@ Route::get('/contact', function () {
 Route::get('/cart', function () {
     return view('cart');
 });
+
 Route::get('/boutique', function () {
     return view('boutique');
 });
+
+Route::get('/mention-legale', function () {
+    return view('ML');
+});
+
+
