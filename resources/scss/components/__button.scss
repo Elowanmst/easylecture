@@ -72,5 +72,12 @@
     &:hover{
         transform: scale(1.1);
     }
+
+    @media screen and (max-width: variables.$mediascreen-m) {
+        &__list {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
 }
 

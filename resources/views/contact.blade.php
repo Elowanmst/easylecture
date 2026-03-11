@@ -11,25 +11,25 @@
 
     <form class="form">
         <div class="form__group">
-            <label class="form__label">Nom :</label>
+            <label for="username-contact" class="form__label">Nom :</label>
             <div class="form__input-wrapper">
                 <span class="form__icon">👤</span>
-                <input type="text" class="form__input">
+                <input id="username-contact" type="text" class="form__input">
             </div>
         </div>
         <div class="form__group">
-            <label class="form__label">Email :</label>
+            <label for="email-contact" class="form__label">Email :</label>
             <div class="form__input-wrapper">
                 <span class="form__icon">📧</span>
-                <input type="email" class="form__input">
+                <input id="email-contact" type="email" class="form__input">
             </div>
         </div>
 
         <div class="form__group">
-            <label class="form__label">Message :</label>
+            <label for="message" class="form__label">Message :</label>
             <div class="form__input-wrapper">
                 <span class="form__icon">✉️</span>
-                <textarea class="form__input" rows="4"></textarea>
+                <textarea id="message" class="form__input" rows="4"></textarea>
             </div>
         </div>
 

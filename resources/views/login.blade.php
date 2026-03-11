@@ -10,24 +10,24 @@
 
     <form class="form">
         <div class="form__group">
-            <label class="form__label">Nom Utilisateur :</label>
+            <label for="username" class="form__label">Nom Utilisateur :</label>
             <div class="form__input-wrapper">
                 <span class="form__icon">👤</span>
-                <input type="text" class="form__input">
+                <input type="text" id="username" class="form__input">
             </div>
         </div>
 
         <div class="form__group">
-            <label class="form__label">Mot de Passe :</label>
+            <label for="mdp-login"class="form__label">Mot de Passe :</label>
             <div class="form__input-wrapper">
                 <span class="form__icon">🔑</span>
-                <input type="password" class="form__input">
+                <input id="mdp-login" type="password" class="form__input">
                 <span class="form__icon-right">afficher</span>
             </div>
-            <a href="#" class="form__link">Mot de Passe Oublié ?</a>
+            <a href="{{ url('/newmdp') }}" class="form__link">Mot de Passe Oublié ?</a>
         </div>
 
-        <a href="#" class="form__register">Pas de Compte ? Créer-en un !</a>
+        <a href="{{ url('/register') }}" class="form__register">Pas de Compte ? Créer-en un !</a>
 
         <button type="submit" class="button button--primary">Se Connecter</button>
     </form>
