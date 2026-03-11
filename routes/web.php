@@ -38,3 +38,7 @@ Route::get('/mention-legale', function () {
 Route::get('/jolie', function () {
     return view('components.jolie');
 });
+
+Route::get('/product', function () {
+    return view('product');
+});
