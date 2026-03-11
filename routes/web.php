@@ -17,3 +17,7 @@ Route::get('/register', function () {
 Route::get('/newmdp', function () {
     return view('newmdp');
 });
+
+Route::get('/boutique', function () {
+    return view('boutique');
+});

@@ -1,0 +1,48 @@
+@use "components/_variables";
+
+.shop {
+    display: inline;
+    grid-template-columns: 1fr 3fr;
+
+    &-title {
+        font-size: 3rem;
+        color: variables.$text-light;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    &-description {
+        color: variables.$text-light;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    &-filtre { 
+        display: inline;
+
+        &__links {
+            display: flex;
+            gap : 1rem;
+            padding: 0;
+            list-style: none;
+            margin-bottom: 2%;
+        }
+
+        &__link {
+            background-color: variables.$bg-card;
+            color: variables.$text-light;
+            font-size: variables.$font-size-small;
+            font-weight: 500;
+            padding : 0.5rem 1rem;
+            transition: variables.$transition;
+            text-decoration: none;
+            border-radius: variables.$border-radius-small;
+        }
+    }
+
+    &-products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+}
