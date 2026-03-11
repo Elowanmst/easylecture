@@ -1,6 +1,6 @@
 <article class="card product-card">
     <div class="product-card__image">
-        <img src="{{ asset('images/livre-test.jpg') }}" alt="Livre Ouvert">
+        <img src="{{ asset('images/livre-test.jpg') }}" alt="Livre Ouvert" loading="lazy">
     </div>
     <div class="product-card__body">
         <h3 class="product-card__title">Titre du Livre 1</h3>
