@@ -5,6 +5,9 @@
     <div class="product-card__body">
         <h3 class="product-card__title">Titre du Livre 1</h3>
         <p class="product-card__price">€9.99</p>
-        <a href="#" class="button button--primary button__card">Ajouter au Panier</a>
+        <div class="product-card__button">
+            <a href="#" class="button button--primary button__card">Ajouter au Panier</a>
+            <a href="#" class="button button--secondary button__card">Voir Produit</a>
+        </div>
     </div>
 </article>
