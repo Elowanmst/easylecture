@@ -18,13 +18,12 @@
 
 @media screen and (max-width: $mediascreen-xl) {
     .container {
-        width: $mediascreen-l;
+        width: $mediascreen-m;
     }
 }
 
-@media screen and (max-width: $mediascreen-l) {
+@media screen and (max-width: $mediascreen-m) {
     .container {
-        width: 100%;
-        padding: 0 1rem;
+        width: 90%;
     }
 }
