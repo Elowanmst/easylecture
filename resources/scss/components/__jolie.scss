@@ -227,18 +227,6 @@
             border-color: variables.$primary-color;
         }
     }
-
-    &__badge {
-        position: absolute;
-        top: 0.75rem;
-        left: 0.75rem;
-        background-color: variables.$primary-color;
-        color: variables.$text-light;
-        font-size: 0.8rem;
-        padding: 0.2rem 0.6rem;
-        border-radius: variables.$border-radius-full;
-        z-index: 1;
-    }
 }
 
 .product-card {
