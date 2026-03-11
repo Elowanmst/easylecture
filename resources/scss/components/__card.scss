@@ -58,4 +58,17 @@
         gap: 1rem;
         justify-content: center;
     }
+
+    @media screen and (max-width: $mediascreen-m) {
+
+    &__title,
+    &__price {
+        text-align: center;
+    }
+
+    &__button {
+        justify-content: center;
+    }
+
+}
 }

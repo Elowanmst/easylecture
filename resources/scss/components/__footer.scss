@@ -91,4 +91,19 @@
         margin: 0;
         padding: 0;
     }
+
+    @media screen and (max-width: variables.$mediascreen-m) {
+        flex-direction: column;        
+        text-align: center;
+    }
+
+    @media screen and (max-width: variables.$mediascreen-l) {
+        flex-direction: column;        
+        text-align: center;
+    }
+
+    @media screen and (max-width: variables.$mediascreen-xl) {
+        flex-direction: column;        
+        text-align: center;
+    }
 }

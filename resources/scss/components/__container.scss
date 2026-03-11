@@ -17,13 +17,13 @@
 }
 
 @media screen and (max-width: $mediascreen-xl) {
-    .container {
+    .container, .container--large {
         width: $mediascreen-m;
     }
 }
 
 @media screen and (max-width: $mediascreen-m) {
-    .container {
+    .container, .container--large {
         width: 90%;
     }
 }
