@@ -9,10 +9,10 @@
                 <nav>
                     <ul class="footer__links">
                         <p class="footer__title">Pages</p>
-                        <li><a href="#" class="footer__link">Accueil</a></li>
-                        <li><a href="#" class="footer__link">Boutique</a></li>
-                        <li><a href="#" class="footer__link">Contact FAQ</a></li>
-                        <li><a href="#" class="footer__link">Login</a></li>
+                        <li><a href="{{ url('/') }}" class="footer__link">Accueil</a></li>
+                        <li><a href="{{ url('/boutique') }}" class="footer__link">Boutique</a></li>
+                        <li><a href="{{ url('/contact') }}" class="footer__link">Contact FAQ</a></li>
+                        <li><a href="{{ url('/login') }}" class="footer__link">Login</a></li>
                     </ul>
                 </nav>
             </div>
