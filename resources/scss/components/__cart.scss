@@ -26,6 +26,14 @@
     gap: 2rem;
 }
 
+.cart-items{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+
 .cart-item-details{
     display: flex;
     justify-content: space-between;
