@@ -1,3 +1,4 @@
+
 @extends("layouts.app")
 
 @section("content")
@@ -12,12 +13,11 @@
                     complications — juste toi, un livre, et une expérience fluide 
                     pensée pour les lecteurs modernes.
                 </p>
-
                 <div class="button__list">
                     <a href="{{ url('/boutique') }}" class="button button--primary button--big">Commencer à acheter</a>
                     <a href="{{ url('/register') }}" class="button button--secondary button--big">Créer son compte</a>
                 </div>
-                    
+                  
             </div>
 
             <div class="welcome__image">

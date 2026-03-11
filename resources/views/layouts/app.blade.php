@@ -17,12 +17,12 @@
     </head>
 
     <body class="body @yield('body-class')">
-
+        <a href="#main-content" class="screen-reader-text">Skip to main content</a>
         @include("components.header")
 
         <div class="scroll-watcher"></div>
 
-        <main> @yield('content') </main>
+        <main id="main-content"> @yield('content') </main>
 
         @include("components.footer")
 
