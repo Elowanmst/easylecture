@@ -9,9 +9,14 @@
 }
 
 .product-card {
+    padding: 0;
     text-align: center;
     transition: $transition;
-    
+    overflow: hidden;
+
+    &__body {
+        padding: 0.5rem 1rem;
+    }
 
     &__title {
         font-size: 1.5rem;
@@ -23,5 +28,22 @@
         font-size: 1.25rem;
         margin-bottom: 1rem;
         text-align: left;
+    }
+
+    &__image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: $transition;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
     }
 }
