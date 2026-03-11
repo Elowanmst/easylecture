@@ -2,7 +2,7 @@
     <div class="container">
         <nav class="header__nav">
             <a href="{{ url('/') }}" class="header__nav__logo">EasyLecture</a>
-            <ul class="header__nav-links">
+            <div class="header__nav-links">
 
                 <div id="menuToggle">
                     <div class="burger-button">
@@ -31,7 +31,7 @@
                     </ul>
                 </div>
 
-                <div class="header__nav-links menubase">
+                <ul class="header__nav-links menubase">
                     <li><a href="{{ url('/boutique') }}" class="header__nav-link">Boutique</a></li>
                     <li><a href="{{ url('/contact') }}" class="header__nav-link">Contact</a></li>
                     <li><a href="{{ url('/login') }}" class="header__nav-link">Login</a></li>
@@ -43,10 +43,10 @@
                                 <circle cx="20" cy="21" r="1"></circle>
                                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                             </svg>
-                        </a>
+                         </a>
                     </li>
-                </div>
-            </ul>
+                </ul>
+            </div>
         </nav>
     </div>
 </header>
