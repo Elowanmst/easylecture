@@ -8,13 +8,7 @@
 
         <p class="product-card__description">{{ $book->description }}</p>
 
-        <p class="product-card__price">{{ 
-        @if ($book->price > 0)
-            '€' . number_format($book->price, 2)
-        @else
-            'Gratuit'
-        @endif }}
-        </p>
+        <p class="product-card__price">{{ $book->price > 0 ? '€' . number_format($book->price, 2) : 'Gratuit' }}</p>
 
         <div class="product-card__button">
 
