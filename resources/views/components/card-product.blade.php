@@ -8,7 +8,10 @@
         <p class="product-card__description">{{ $book->description }}</p>
         <p class="product-card__price">{{ $book->price > 0 ? '€' . number_format($book->price, 2) : 'Gratuit' }}</p>
         <div class="product-card__button">
-            <a href="#" class="button button--primary button__card">Ajouter au Panier</a>
+            <form method="POST" action="{{ route('cart.add', $book) }}">
+                @csrf
+                <button type="submit" class="button button--primary button__card">Ajouter au Panier</button>
+            </form>
             <a href="{{ route('product.show', $book) }}" class="button button--secondary button__card">Voir Produit</a>
         </div>
     </div>

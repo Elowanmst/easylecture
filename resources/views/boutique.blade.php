@@ -3,6 +3,9 @@
 @section('content')
 
 <div class="container--large">
+    @if (session('cart_message'))
+        <p class="cart-message">{{ session('cart_message') }}</p>
+    @endif
     <h1 class="shop-title">Produits</h1>
     <div class="shop">
         <p class="shop-description">EasyLecture est la plateforme idéale pour découvrir des e-books inspirants et enrichissants. Explorez une sélection de livres numériques pour apprendre, progresser ou simplement vous divertir. Accédez instantanément à une bibliothèque moderne et pratique, pensée pour une lecture simple et accessible partout.</p>
