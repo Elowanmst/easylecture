@@ -52,6 +52,12 @@
         font-size: variables.$font-size-base;
     }
 
+    &--compact {
+        padding: 0.4rem 0.75rem;
+        font-size: 13px;
+        gap: 5px;
+    }
+
     &__footer{
         border-radius : 0;
         background-color: variables.$primary-color;
