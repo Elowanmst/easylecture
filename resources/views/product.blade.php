@@ -2,23 +2,20 @@
 
 @section('content')
     <div class="product">
-        
+
         <section class="container">
-            <h1 class="product__title">livre 1</h1>
-            {{-- <meta property="og:title" class="product__title" content="livre 1" /> --}}
-            <article class="product__description">
+            <article class="product__layout">
                 <div class="product__image">
-                    <img src="{{ asset('images/livre-test.jpg') }}">
-                    {{-- <meta property="og:image" class="product__image" content="{{ asset('images/livre-test.jpg') }}" /> --}}
+                    <img src="{{ asset($book->image ?? 'images/livre-test.jpg') }}" alt="{{ $book->title }}">
                 </div>
-                <div class="card">
-                    <p class="product__description">c'est la description </p>
-                    {{-- <meta property="og:description" class="product__description" content="c'est la description" /> --}}
-                    <hr>
-                    <p class="product__price">20€</p>
-                    {{-- <meta property="og:price:amount" class="product__price" content="20" />
-                    <meta property="og:price:currency" content="EUR" /> --}}
-                    <button type="submit" class="button button--primary button__card">Ajouter au panier</button>
+                <div class="card product__card">
+                    <span class="featured__badge">{{ $book->genre }}</span>
+                    <h1 class="product__title">{{ $book->title }}</h1>
+                    <p class="product__author">par {{ $book->author }}</p>
+                    <hr class="product__divider">
+                    <p class="product__text">{{ $book->description }}</p>
+                    <p class="product__price">{{ $book->price > 0 ? '€' . number_format($book->price, 2) : 'Gratuit' }}</p>
+                    <button type="submit" class="button button--primary button__card product__add">Ajouter au panier</button>
                 </div>
             </article>
         </section>

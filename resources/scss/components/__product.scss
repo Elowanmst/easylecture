@@ -1,19 +1,13 @@
-@use '_variables';
-
+@use '_variables' as *;
 
 .product {
-    &__description {
+    padding: 3rem 0;
+
+    &__layout {
         display: grid;
-        gap: 1rem;
-        grid-template-columns: 2fr 2fr;
-
-        &__image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-
-            
-        }
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
     }
 
     &__image {
@@ -22,13 +16,86 @@
         img {
             width: 100%;
             height: 100%;
+            max-height: 520px;
             object-fit: cover;
-            border-radius: variables.$border-radius-small;
-            
+            border-radius: $border-radius-card;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+        }
+    }
+
+    &__card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        padding: 2.5rem;
+    }
+
+    &__title {
+        font-size: 2.25rem;
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    &__author {
+        font-size: $font-size-medium;
+        color: $color-grey;
+        margin: 0;
+        font-style: italic;
+    }
+
+    &__divider {
+        width: 100%;
+        border: none;
+        border-top: $border-width $border-style rgba(255, 255, 255, 0.15);
+        margin: 0.25rem 0;
+    }
+
+    &__text {
+        font-size: $font-size-medium;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0;
+    }
+
+    &__price {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $primary-color;
+        margin: 0;
+    }
+
+    &__add {
+        align-self: flex-start;
+        margin-top: 0.5rem;
+        padding: 0.85rem 2rem;
+        font-size: $font-size-medium;
+    }
+
+    .featured__badge {
+        position: static;
+        align-self: flex-start;
+    }
+
+    @media screen and (max-width: $mediascreen-m) {
+        padding: 2rem 0;
+
+        &__layout {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        &__card {
+            padding: 1.75rem;
+        }
+
+        &__title {
+            font-size: 1.75rem;
+        }
+
+        &__add {
+            align-self: stretch;
+            text-align: center;
         }
     }
 }
-
-
-
-
