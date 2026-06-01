@@ -33,6 +33,7 @@
             @include("components/card-product-best-seller")
             @include("components/card-product-best-seller")
             @include("components/card-product-best-seller")
+            @include("components/card-product-best-seller")
         </div>
     </section>
 

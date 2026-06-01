@@ -42,9 +42,7 @@ class CartController extends Controller
     public function add(Book $book)
     {
         $cart = $this->cart();
-
         $cart[$book->id] = ($cart[$book->id] ?? 0) + 1;
-
         $this->save($cart);
 
         return back()->with('cart_message', "« {$book->title} » a été ajouté au panier.");
@@ -71,16 +69,13 @@ class CartController extends Controller
         }
 
         $this->save($cart);
-
         return back();
     }
 
     public function remove(Book $book)
     {
         $cart = $this->cart();
-
         unset($cart[$book->id]);
-
         $this->save($cart);
 
         return back()->with('cart_message', "« {$book->title} » a été retiré du panier.");
