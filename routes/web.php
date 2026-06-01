@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -26,9 +27,7 @@ Route::get('/cart', function () {
     return view('cart');
 });
 
-Route::get('/boutique', function () {
-    return view('boutique');
-});
+Route::get('/boutique', [BookController::class, 'index']);
 
 Route::get('/mention-legale', function () {
     return view('ML');
@@ -39,6 +38,13 @@ Route::get('/jolie', function () {
     return view('components.jolie');
 });
 
-Route::get('/product', function () {
-    return view('product');
+Route::get('/product/{book}', [BookController::class, 'show'])->name('product.show');
+
+Route::prefix('admin')->group(function () {
+    Route::get('/books', [BookController::class, 'adminIndex'])->name('admin.books.index');
+    Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
+    Route::post('/books', [BookController::class, 'store'])->name('books.store');
+    Route::get('/books/{book}/edit', [BookController::class, 'edit'])->name('books.edit');
+    Route::put('/books/{book}', [BookController::class, 'update'])->name('books.update');
+    Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('books.destroy');
 });

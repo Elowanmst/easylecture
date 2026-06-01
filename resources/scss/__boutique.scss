@@ -7,7 +7,7 @@
     padding: 2rem 0;
 
     &-title {
-        font-size: 3rem;
+        font-size: 5rem;
         color: variables.$text-light;
         text-align: center;
         margin-bottom: 2rem;
@@ -15,6 +15,7 @@
 
     &-description {
         color: variables.$text-light;
+        font-size: 1.3rem;
         text-align: center;
         margin-bottom: 3rem;
     }
@@ -24,6 +25,7 @@
 
         &__links {
             display: flex;
+            align-items: center;
             gap : 1rem;
             padding: 0;
             list-style: none;
@@ -43,13 +45,38 @@
             &:hover {
                 border-color: variables.$primary-color;
             }
+
+            &--reset {
+                background-color: variables.$primary-background-color;
+                color: variables.$primary-color;
+                border: variables.$border-width variables.$border-style variables.$primary-color;
+
+                &:hover {
+                    background-color: variables.$primary-color;
+                    border-color: variables.$primary-color;
+                    color: variables.$text-light;
+                }
+            }
         }
     }
 
     &-products {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: start;
         gap: 1.5rem;
+
+        @media screen and (max-width: variables.$mediascreen-xl) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media screen and (max-width: variables.$mediascreen-l) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: variables.$mediascreen-s) {
+            grid-template-columns: 1fr;
+        }
     }
 
     @media screen and (max-width: variables.$mediascreen-m) {
