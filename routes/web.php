@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -23,9 +24,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/cart', function () {
-    return view('cart');
-});
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add/{book}', [CartController::class, 'add'])->name('cart.add');
+Route::patch('/cart/update/{book}', [CartController::class, 'update'])->name('cart.update');
+Route::delete('/cart/remove/{book}', [CartController::class, 'remove'])->name('cart.remove');
 
 Route::get('/boutique', [BookController::class, 'index']);
 

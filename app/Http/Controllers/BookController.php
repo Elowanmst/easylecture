@@ -13,17 +13,14 @@ class BookController extends Controller
         /** @var Builder<Book> $query */
         $query = Book::query();
 
-        // Filtre par genre
         if ($request->filled('genre')) {
             $query->where('genre', $request->input('genre'));
         }
 
-        // Filtre par tranche d'âge
         if ($request->filled('age_range')) {
             $query->where('age_range', $request->input('age_range'));
         }
 
-        // Filtre par tranche de prix
         switch ($request->input('price')) {
             case 'free':
                 $query->where('price', 0);
