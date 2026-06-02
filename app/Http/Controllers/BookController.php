@@ -48,4 +48,82 @@ class BookController extends Controller
     {
         return view('product', ['book' => $book]);
     }
+
+        // ===== PAGES ADMIN =====
+
+    public function adminIndex()
+    {
+        $books = Book::paginate(15);
+        return view('admin.books.index', compact('books'));
+    }
+
+    public function create()
+    {
+        return view('admin.books.create');
+    }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'author' => 'required|string|max:255',
+            'genre' => 'required|string',
+            'age_range' => 'required|string',
+            'price' => 'required|numeric|min:0',
+            'description' => 'nullable|string|max:1000',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('books', 'public');
+            $validated['image'] = $imagePath;
+        }
+
+        Book::create($validated);
+
+        return redirect()->route('admin.books.index')->with('success', 'Livre créé avec succès!');
+    }
+
+    public function edit(Book $book)
+    {
+        return view('admin.books.edit', compact('book'));
+    }
+
+    public function update(Request $request, Book $book)
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'author' => 'required|string|max:255',
+            'genre' => 'required|string',
+            'age_range' => 'required|string',
+            'price' => 'required|numeric|min:0',
+            'description' => 'nullable|string|max:1000',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            if ($book->image) {
+                \Storage::disk('public')->delete($book->image);
+            }
+            $imagePath = $request->file('image')->store('books', 'public');
+            $validated['image'] = $imagePath;
+        }
+
+        $book->update($validated);
+
+        return redirect()->route('admin.books.index')->with('success', 'Livre modifié avec succès!');
+    }
+
+    public function destroy(Book $book)
+    {
+        if ($book->image) {
+            \Storage::disk('public')->delete($book->image);
+        }
+
+        $book->delete();
+
+        return redirect()->route('admin.books.index')->with('success', 'Livre supprimé avec succès!');
+    }
+
+
 }
