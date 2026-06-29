@@ -3,6 +3,8 @@
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
+use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -28,6 +30,20 @@ Route::get('/newmdp', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/mon-compte', function () {
+    $user = Auth::user();
+
+    $orders = Order::with('items')
+        ->where('user_id', Auth::id())
+        ->latest()
+        ->get();
+
+    return view('mon-compte', [
+        'user' => $user,
+        'orders' => $orders,
+    ]);
+})->name('mon-compte');
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add/{book}', [CartController::class, 'add'])->name('cart.add');

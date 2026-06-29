@@ -1,21 +1,30 @@
 @use '_variables';
 
+.account {
+  h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
 .account-layout {
   display: grid;
   grid-template-columns: minmax(260px, 1fr) minmax(0, 2fr);
   align-items: start;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 // ---- Infos du compte ----
 .account-info {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  padding: 1.5rem;
+  gap: 1.5rem;
+  padding: 2rem;
 
   h2 {
-    margin: 0;
+    margin: 0 0 0.5rem;
   }
 
   p {
@@ -24,6 +33,7 @@
 
   &__field {
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 0.25rem;
   }
@@ -35,8 +45,40 @@
     letter-spacing: 0.05em;
   }
 
+  &__input {
+    width: 75%;
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+    color: variables.$text-dark;
+    background: variables.$bg-input;
+    border: variables.$border-width variables.$border-style variables.$color-grey;
+    border-radius: variables.$border-radius-small;
+    outline: none;
+
+    &:focus {
+      border-color: variables.$primary-color;
+      box-shadow: 0 0 0 2px variables.$primary-color-dark;
+    }
+  }
+
+  &__error {
+    color: rgb(200, 35, 35);
+    font-size: 0.85rem;
+  }
+
+  &__success {
+    padding: 0.75rem 1rem;
+    border-radius: variables.$border-radius-small;
+    background: variables.$success-background-color;
+    color: variables.$success-color;
+    font-size: 0.9rem;
+  }
+
   form {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
   }
 
   .button {
@@ -48,11 +90,11 @@
 // ---- Liste des commandes ----
 .account-orders {
   h2 {
-    margin-top: 0;
+    margin: 0 0 1.5rem;
   }
 
   &__empty {
-    margin: 1rem 0 1.5rem;
+    margin: 0 0 1.75rem;
     color: variables.$color-grey;
   }
 
