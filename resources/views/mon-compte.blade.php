@@ -60,6 +60,8 @@
                 <button type="submit" class="button button--secondary">Mettre à jour mes informations</button>
             </form>
 
+            <a href="{{ route('library.index') }}" class="button button--primary">Mes livres</a>
+
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit" class="button button--secondary">Se déconnecter</button>

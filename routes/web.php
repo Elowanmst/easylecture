@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\OrderController;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
@@ -54,6 +55,11 @@ Route::get('/cart/success', [CartController::class, 'success'])->name('cart.succ
 
 Route::get('/commandes', [OrderController::class, 'index'])->name('orders.index');
 Route::get('/commandes/{order}', [OrderController::class, 'show'])->name('orders.show');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/mes-livres', [LibraryController::class, 'index'])->name('library.index');
+    Route::get('/mes-livres/{book}', [LibraryController::class, 'read'])->name('library.read');
+});
 
 Route::get('/boutique', [BookController::class, 'index']);
 

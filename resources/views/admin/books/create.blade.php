@@ -64,6 +64,12 @@
         @error('image') <span class="form__error">{{ $message }}</span> @enderror
     </div>
 
+    <div class="form__group">
+        <label for="pdf" class="form__label">Fichier PDF</label>
+        <input type="file" id="pdf" name="pdf" class="form__input" accept="application/pdf">
+        @error('pdf') <span class="form__error">{{ $message }}</span> @enderror
+    </div>
+
     <div class="admin-form-actions">
         <button type="submit" class="button button--primary">Créer le livre</button>
         <a href="{{ route('admin.books.index') }}" class="button button--secondary">Annuler</a>
