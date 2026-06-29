@@ -3,33 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Stripe\Checkout\Session as StripeSession;
+use Stripe\Stripe;
 
 class CartController extends Controller
-{   
+{
     private const SHIPPING = 0.00;
 
     public function index()
     {
-        $cart = $this->cart();
-
-        $books = Book::whereKey(array_keys($cart))->get();
-
-        $items = $books->map(function (Book $book) use ($cart) {
-            $quantity = $cart[$book->id];
-            $price = (float) $book->price;
-
-            return [
-                'book'     => $book,
-                'quantity' => $quantity,
-                'price'    => $price,
-                'total'    => $price * $quantity,
-            ];
-        });
-
-        $subtotal = $items->sum('total');
-        $shipping = $items->isEmpty() ? 0 : self::SHIPPING;
-        $total = $subtotal + $shipping;
+        ['items' => $items, 'subtotal' => $subtotal, 'shipping' => $shipping, 'total' => $total] = $this->summary();
 
         return view('cart', [
             'items'    => $items,
@@ -37,6 +23,82 @@ class CartController extends Controller
             'shipping' => $shipping,
             'total'    => $total,
         ]);
+    }
+
+    public function checkout()
+    {
+        $summary = $this->summary();
+
+        if ($summary['items']->isEmpty()) {
+            return redirect()->route('cart.index');
+        }
+
+        // On envoie à Stripe UNE SEULE ligne avec le total déjà calculé,
+        // pas le détail des produits. Stripe attend un montant en centimes.
+        Stripe::setApiKey(config('services.stripe.secret'));
+
+        $session = StripeSession::create([
+            'mode' => 'payment',
+            'line_items' => [[
+                'quantity' => 1,
+                'price_data' => [
+                    'currency' => 'eur',
+                    'unit_amount' => (int) round($summary['total'] * 100),
+                    'product_data' => [
+                        'name' => 'Commande EasyLecture',
+                    ],
+                ],
+            ]],
+            'success_url' => route('cart.success') . '?session_id={CHECKOUT_SESSION_ID}',
+            'cancel_url' => route('cart.index'),
+        ]);
+
+        // On enregistre une commande "pending" avec un instantané du panier,
+        // elle passera "paid" au retour de Stripe (cart.success).
+        $this->storePendingOrder($summary, $session->id);
+
+        return redirect($session->url);
+    }
+
+    public function success(Request $request)
+    {
+        $sessionId = $request->query('session_id');
+
+        if ($sessionId) {
+            Order::where('stripe_session_id', $sessionId)
+                ->where('status', 'pending')
+                ->update(['status' => 'paid']);
+        }
+
+        session()->forget('cart');
+
+        return redirect()->route('cart.index')
+            ->with('cart_message', 'Merci ! Votre paiement a bien été reçu.');
+    }
+
+    /**
+     * Crée la commande et son instantané d'articles avant la redirection Stripe.
+     */
+    private function storePendingOrder(array $summary, string $stripeSessionId): void
+    {
+        $order = Order::create([
+            'user_id'           => Auth::id(),
+            'stripe_session_id' => $stripeSessionId,
+            'status'            => 'pending',
+            'total'             => $summary['total'],
+        ]);
+
+        foreach ($summary['items'] as $item) {
+            /** @var Book $book */
+            $book = $item['book'];
+
+            $order->items()->create([
+                'book_id'  => $book->id,
+                'title'    => $book->title,
+                'price'    => $item['price'],
+                'quantity' => $item['quantity'],
+            ]);
+        }
     }
 
     public function add(Book $book)
@@ -79,6 +141,35 @@ class CartController extends Controller
         $this->save($cart);
 
         return back()->with('cart_message', "« {$book->title} » a été retiré du panier.");
+    }
+
+    private function summary(): array
+    {
+        $cart = $this->cart();
+
+        $books = Book::whereKey(array_keys($cart))->get();
+
+        $items = $books->map(function (Book $book) use ($cart) {
+            $quantity = $cart[$book->id];
+            $price = (float) $book->price;
+
+            return [
+                'book'     => $book,
+                'quantity' => $quantity,
+                'price'    => $price,
+                'total'    => $price * $quantity,
+            ];
+        });
+
+        $subtotal = $items->sum('total');
+        $shipping = $items->isEmpty() ? 0 : self::SHIPPING;
+
+        return [
+            'items'    => $items,
+            'subtotal' => $subtotal,
+            'shipping' => $shipping,
+            'total'    => $subtotal + $shipping,
+        ];
     }
 
     private function cart(): array
