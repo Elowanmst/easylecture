@@ -11,11 +11,15 @@ Route::get('/', function () {
 
 Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
 
 Route::get('/register', function () {
     return view('register');
-});
+})->name('register');
+
+Route::get('/login', fn() => view('login'))->name('login');
+
+Route::get('/register', fn() => view('register'))->name('register');
 
 Route::get('/newmdp', function () {
     return view('newmdp');
@@ -42,9 +46,6 @@ Route::get('/mention-legale', function () {
 });
 
 
-Route::get('/jolie', function () {
-    return view('components.jolie');
-});
 
 Route::get('/product/{book}', [BookController::class, 'show'])->name('product.show');
 
