@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -32,6 +33,11 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add/{book}', [CartController::class, 'add'])->name('cart.add');
 Route::patch('/cart/update/{book}', [CartController::class, 'update'])->name('cart.update');
 Route::delete('/cart/remove/{book}', [CartController::class, 'remove'])->name('cart.remove');
+Route::post('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+Route::get('/cart/success', [CartController::class, 'success'])->name('cart.success');
+
+Route::get('/commandes', [OrderController::class, 'index'])->name('orders.index');
+Route::get('/commandes/{order}', [OrderController::class, 'show'])->name('orders.show');
 
 Route::get('/boutique', [BookController::class, 'index']);
 
