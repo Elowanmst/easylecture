@@ -28,6 +28,8 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add/{book}', [CartController::class, 'add'])->name('cart.add');
 Route::patch('/cart/update/{book}', [CartController::class, 'update'])->name('cart.update');
 Route::delete('/cart/remove/{book}', [CartController::class, 'remove'])->name('cart.remove');
+Route::post('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+Route::get('/cart/success', [CartController::class, 'success'])->name('cart.success');
 
 Route::get('/boutique', [BookController::class, 'index']);
 
