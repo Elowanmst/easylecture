@@ -59,10 +59,12 @@
 #menuToggle {
     user-select: none;
     
+    
     a {
         text-decoration: none;
         color: #232323;
         transition: color 0.3s ease;
+        
         
         &:hover {
             color: variables.$primary-color;
@@ -172,5 +174,100 @@
         .container{
             max-width: 100%;
         }
+    }
+}
+
+.header__user-menu {
+    position: relative;
+    list-style: none;
+}
+
+/* cache checkbox */
+.user-toggle {
+    display: none;
+}
+
+/* bouton utilisateur */
+.header__user-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 0.5rem 0.75rem;
+
+    color: variables.$text-light;
+    font-size: variables.$font-size-base;
+    font-weight: 500;
+
+    transition: variables.$transition;
+
+    &:hover {
+        transform: scale(1.05);
+        color: variables.$primary-color;
+    }
+}
+
+/* dropdown */
+.header__dropdown {
+    display: none;
+
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+
+    min-width: 180px;
+
+    background: variables.$bg-card;
+    border: 1px solid rgba(variables.$primary-color, 0.2);
+    border-radius: variables.$border-radius-small;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+    z-index: 999;
+}
+
+/* ouverture dropdown */
+.user-toggle:checked ~ .header__dropdown {
+    display: block;
+}
+
+/* items */
+.header__dropdown-item {
+    display: block;
+
+    padding: 0.75rem 1rem;
+
+    text-decoration: none;
+    color: variables.$text-light;
+
+    font-size: variables.$font-size-base;
+    font-weight: 500;
+
+    background: transparent;
+    border: none;
+
+    width: 100%;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: variables.$transition;
+
+    &:hover {
+        background: rgba(variables.$primary-color, 0.1);
+        color: variables.$primary-color;
+    }
+}
+
+/* logout spécifique */
+.header__logout {
+    color: #ff4d4d;
+
+    &:hover {
+        background: rgba(255, 77, 77, 0.1);
+        color: #ff4d4d;
     }
 }

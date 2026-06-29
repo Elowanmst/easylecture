@@ -34,8 +34,37 @@
                 <ul class="header__nav-links menubase">
                     <li><a href="{{ url('/boutique') }}" class="header__nav-link">Boutique</a></li>
                     <li><a href="{{ url('/contact') }}" class="header__nav-link">Contact</a></li>
-                    <li><a href="{{ url('/login') }}" class="header__nav-link">Login</a></li>
-                    <li><a href="{{ url('/register') }}" class="button button--primary button--big">Sign Up</a></li>
+                    @guest
+                        <li><a href="{{ route('login') }}" class="header__nav-link">Login</a></li>
+                        <li>
+                            <a href="{{ route('register') }}" class="button button--primary button--big">
+                                Sign Up
+                            </a>
+                        </li>
+                    @endguest
+
+                    @auth
+                    <li class="header__user-menu">
+                        <input type="checkbox" id="user-toggle" class="user-toggle">
+
+                        <label for="user-toggle" class="header__user-button">
+                            👤 {{ auth()->user()->name }}
+                        </label>
+
+                        <div class="header__dropdown">
+                            <a href="{{ url('/compte') }}" class="header__dropdown-item">
+                                Compte
+                            </a>
+
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="header__dropdown-item header__logout">
+                                    Logout
+                                </button>
+                            </form>
+                        </div>
+                    </li>
+                    @endauth
                     <li>
                         <a href="{{ url('/cart') }}" class="header__nav-link" aria-label="Mon Panier">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
