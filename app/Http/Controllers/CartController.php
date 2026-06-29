@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Stripe\Checkout\Session as StripeSession;
 use Stripe\Stripe;
 
@@ -51,15 +53,52 @@ class CartController extends Controller
             'cancel_url' => route('cart.index'),
         ]);
 
+        // On enregistre une commande "pending" avec un instantané du panier,
+        // elle passera "paid" au retour de Stripe (cart.success).
+        $this->storePendingOrder($summary, $session->id);
+
         return redirect($session->url);
     }
 
-    public function success()
+    public function success(Request $request)
     {
+        $sessionId = $request->query('session_id');
+
+        if ($sessionId) {
+            Order::where('stripe_session_id', $sessionId)
+                ->where('status', 'pending')
+                ->update(['status' => 'paid']);
+        }
+
         session()->forget('cart');
 
         return redirect()->route('cart.index')
             ->with('cart_message', 'Merci ! Votre paiement a bien été reçu.');
+    }
+
+    /**
+     * Crée la commande et son instantané d'articles avant la redirection Stripe.
+     */
+    private function storePendingOrder(array $summary, string $stripeSessionId): void
+    {
+        $order = Order::create([
+            'user_id'           => Auth::id(),
+            'stripe_session_id' => $stripeSessionId,
+            'status'            => 'pending',
+            'total'             => $summary['total'],
+        ]);
+
+        foreach ($summary['items'] as $item) {
+            /** @var Book $book */
+            $book = $item['book'];
+
+            $order->items()->create([
+                'book_id'  => $book->id,
+                'title'    => $book->title,
+                'price'    => $item['price'],
+                'quantity' => $item['quantity'],
+            ]);
+        }
     }
 
     public function add(Book $book)
