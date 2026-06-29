@@ -56,6 +56,10 @@
                                 Compte
                             </a>
 
+                            <a href="{{ route('library.index') }}" class="header__dropdown-item">
+                                Mes livres
+                            </a>
+
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <button type="submit" class="header__dropdown-item header__logout">

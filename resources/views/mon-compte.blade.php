@@ -16,14 +16,52 @@
 
         <aside class="account-info card">
             <h2>Mes informations</h2>
-            <div class="account-info__field">
-                <span class="account-info__label">Nom</span>
-                <p>{{ $user->name }}</p>
-            </div>
-            <div class="account-info__field">
-                <span class="account-info__label">Email</span>
-                <p>{{ $user->email }}</p>
-            </div>
+
+            @if (session('status') === 'profile-information-updated')
+                <div class="account-info__success">Vos informations ont bien été mises à jour.</div>
+            @endif
+
+            <form method="POST" action="{{ route('user-profile-information.update') }}">
+                @csrf
+                @method('PUT')
+
+                <div class="account-info__field">
+                    <label for="name" class="account-info__label">Nom</label>
+                    <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        class="account-info__input"
+                        value="{{ old('name', $user->name) }}"
+                        required
+                        autocomplete="name"
+                    >
+                    @error('name', 'updateProfileInformation')
+                        <div class="account-info__error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="account-info__field">
+                    <label for="email" class="account-info__label">Email</label>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        class="account-info__input"
+                        value="{{ old('email', $user->email) }}"
+                        required
+                        autocomplete="email"
+                    >
+                    @error('email', 'updateProfileInformation')
+                        <div class="account-info__error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <button type="submit" class="button button--secondary">Mettre à jour mes informations</button>
+            </form>
+
+            <a href="{{ route('library.index') }}" class="button button--primary">Mes livres</a>
+
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit" class="button button--secondary">Se déconnecter</button>
