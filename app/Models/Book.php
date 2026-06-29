@@ -13,6 +13,7 @@ class Book extends Model
         'age_range',
         'price',
         'image',
+        'pdf',
         'description',
     ];
 

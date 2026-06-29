@@ -70,11 +70,17 @@ class BookController extends Controller
             'price' => 'required|numeric|min:0',
             'description' => 'nullable|string|max:1000',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'pdf' => 'nullable|mimes:pdf|max:20480',
         ]);
 
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('books', 'public');
             $validated['image'] = $imagePath;
+        }
+
+        if ($request->hasFile('pdf')) {
+            $pdfPath = $request->file('pdf')->store('books/pdf', 'public');
+            $validated['pdf'] = $pdfPath;
         }
 
         Book::create($validated);
