@@ -52,9 +52,17 @@
                         </label>
 
                         <div class="header__dropdown">
-                            <a href="{{ url('/compte') }}" class="header__dropdown-item">
+
+                            <a href="{{ url('/mon-compte') }}" class="header__dropdown-item">
                                 Compte
                             </a>
+
+                            
+                            @if(auth()->user()->isAdmin())
+                                <a href="{{ route('admin.books.index') }}" class="header__dropdown-item">
+                                    Admin
+                                </a>
+                            @endif
 
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
@@ -62,6 +70,7 @@
                                     Logout
                                 </button>
                             </form>
+
                         </div>
                     </li>
                     @endauth
