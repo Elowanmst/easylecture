@@ -14,7 +14,7 @@
 
         <div class="form__group">
             <label for="username" class="form__label">
-                Nom Utilisateur :
+                E-mail :
             </label>
 
             <div class="form__input-wrapper">
