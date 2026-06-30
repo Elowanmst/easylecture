@@ -2,7 +2,11 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CartController;
+
 use App\Http\Controllers\CheckoutController;
+
+use App\Http\Controllers\LibraryController;
+
 use App\Http\Controllers\OrderController;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
@@ -94,8 +98,17 @@ Route::prefix('admin')
     ->middleware(['auth', 'admin'])
     ->group(function () {
 
+
         Route::get('/books', [BookController::class, 'adminIndex'])
             ->name('admin.books.index');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/mes-livres', [LibraryController::class, 'index'])->name('library.index');
+    Route::get('/mes-livres/{book}', [LibraryController::class, 'read'])->name('library.read');
+});
+
+Route::get('/boutique', [BookController::class, 'index']);
+
 
         Route::get('/books/create', [BookController::class, 'create'])
             ->name('books.create');

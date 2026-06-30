@@ -57,12 +57,18 @@
                                 Compte
                             </a>
 
+
                             
                             @if(auth()->user()->isAdmin())
                                 <a href="{{ route('admin.books.index') }}" class="header__dropdown-item">
                                     Admin
                                 </a>
                             @endif
+
+                            <a href="{{ route('library.index') }}" class="header__dropdown-item">
+                                Mes livres
+                            </a>
+
 
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
