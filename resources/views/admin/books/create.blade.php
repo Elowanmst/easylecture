@@ -15,7 +15,7 @@
         </div>
 
         <div class="form__group">
-            <label for="author" class="form__label">Auteur *</label>
+            <label for="author" class="form__label--admin">Auteur *</label>
             <input type="text" id="author" name="author" class="form__input" value="{{ old('author') }}" required />
             @error ('author')
                 <span class="form__error">{{ $message }}</span>
@@ -23,7 +23,7 @@
         </div>
 
         <div class="form__group">
-            <label for="genre" class="form__label">Genre *</label>
+            <label for="genre" class="form__label--admin">Genre *</label>
             <select id="genre" name="genre" class="form__input" required>
                 <option value="">-- Sélectionner --</option>
                 <option value="Fiction" @selected (old('genre') === 'Fiction')>Fiction</option>
@@ -38,7 +38,7 @@
         </div>
 
         <div class="form__group">
-            <label for="age_range" class="form__label">Tranche d'âge *</label>
+            <label for="age_range" class="form__label--admin">Tranche d'âge *</label>
             <select id="age_range" name="age_range" class="form__input" required>
                 <option value="">-- Sélectionner --</option>
                 <option value="-3ans" @selected (old('age_range') === '-3ans')>Moins de 3 ans</option>
@@ -54,7 +54,7 @@
         </div>
 
         <div class="form__group">
-            <label for="price" class="form__label">Prix (€) *</label>
+            <label for="price" class="form__label--admin">Prix (€) *</label>
             <input
                 type="number"
                 id="price"
@@ -71,7 +71,7 @@
         </div>
 
         <div class="form__group">
-            <label for="description" class="form__label">Description</label>
+            <label for="description" class="form__label--admin">Description</label>
             <textarea id="description" name="description" class="form__input">{{ old('description') }}</textarea>
             @error ('description')
                 <span class="form__error">{{ $message }}</span>
@@ -79,7 +79,7 @@
         </div>
 
         <div class="form__group">
-            <label for="image" class="form__label">Image de couverture</label>
+            <label for="image" class="form__label--admin">Image de couverture</label>
             <input type="file" id="image" name="image" class="form__input" accept="image/*" />
             @error ('image')
                 <span class="form__error">{{ $message }}</span>
@@ -87,7 +87,7 @@
         </div>
 
         <div class="form__group">
-            <label for="pdf" class="form__label">Fichier PDF</label>
+            <label for="pdf" class="form__label--admin">Fichier PDF</label>
             <input type="file" id="pdf" name="pdf" class="form__input" accept="application/pdf" />
             @error ('pdf')
                 <span class="form__error">{{ $message }}</span>

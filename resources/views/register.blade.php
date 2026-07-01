@@ -77,22 +77,25 @@
                     <div>{{ $message }}</div>
                 @enderror
 
+            </div>
+            <div class="form__group">
+
                 <label for="mdp-register-verif" class="form__label"> Confirmation de mot de Passe : </label>
 
-                <div class="form__input-wrapper">
-                    <span class="form__icon">🔑</span>
+                    <div class="form__input-wrapper">
+                        <span class="form__icon">🔑</span>
 
-                    <input
-                        id="mdp-register-verif"
-                        name="password_confirmation"
-                        type="password"
-                        class="form__input"
-                        required
-                        autocomplete="new-password"
-                    />
+                        <input
+                            id="mdp-register-verif"
+                            name="password_confirmation"
+                            type="password"
+                            class="form__input"
+                            required
+                            autocomplete="new-password"
+                        />
 
-                    <span class="form__icon-right">afficher</span>
-                </div>
+                        <span class="form__icon-right">afficher</span>
+                    </div>
             </div>
 
             <a href="{{ route('login') }}" class="form__register"> Deja un Compte ? Se Connecter ! </a>

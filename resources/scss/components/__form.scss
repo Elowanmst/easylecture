@@ -42,12 +42,16 @@
     &__group {
         display: flex;
         flex-direction: column;
-        gap: 0.4rem;
+        gap: 0.5rem;
     }
 
     &__label {
         font-size: variables.$font-size-medium;
         color: variables.$text-light;
+        
+        &--admin{
+            margin-top : 1rem;
+        }
     }
 
     &__input-wrapper {
@@ -94,7 +98,6 @@
         color: variables.$text-dark;
         background: variables.$bg-input;
         border-radius: variables.$border-radius-small;
-        margin-bottom: 0.75rem;
         border: none;
         outline: none;
     }
