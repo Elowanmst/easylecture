@@ -10,29 +10,34 @@
     text-decoration: none;
     transition: variables.$transition;
     font-size: variables.$font-size-small;
+    font-family: 'Jersey 25', sans-serif;
 
     &--primary {
         background-color: variables.$primary-background-color;
         border-color: variables.$primary-color;
         color: variables.$text-light;
+        font-size: variables.$font-size-medium;
     }
 
     &--secondary {
         background-color: variables.$secondary-background-color;
         border-color: variables.$secondary-color;
         color: variables.$text-light;
+        font-size: variables.$font-size-medium;
     }
 
     &--transparent {
         background-color: transparent;
         border-color: variables.$text-light;
         color: variables.$text-light;
+        font-size: variables.$font-size-medium;
     }
 
     &--success {
         background-color: variables.$success-color;
         border : none;
         color: variables.$text-light;
+        font-size: variables.$font-size-medium;
     }
 
     &--dark {
@@ -77,7 +82,7 @@
     }
 
     &:hover{
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
 
     @media screen and (max-width: variables.$mediascreen-m) {

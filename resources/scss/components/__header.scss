@@ -257,14 +257,13 @@
     transition: variables.$transition;
 
     &:hover {
-        background: rgba(variables.$primary-color, 0.1);
-        color: variables.$primary-color;
+        background: rgba(variables.$secondary-color, 0.1);
     }
 }
 
-/* logout spécifique */
 .header__logout {
     color: #ff4d4d;
+    font-family: 'Jersey 25', sans-serif;
 
     &:hover {
         background: rgba(255, 77, 77, 0.1);

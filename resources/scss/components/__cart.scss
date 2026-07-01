@@ -45,27 +45,17 @@
   margin-bottom: 10px;
 }
 
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1.5rem;
-
-  > div {
+.cart {
+  &__btn {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-
-    .button {
-      width: 90%;
-      text-align: center;
-
-      &:hover {
-        transform: scale(1.02);
-      }
-    }
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap : 1rem;
   }
 }
+
 
 .cart-item-name {
   font-size: variables.$font-size-medium;

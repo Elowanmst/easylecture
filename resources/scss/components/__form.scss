@@ -50,8 +50,7 @@
     }
 
     &__label {
-        font-size: 0.95rem;
-        font-weight: 700;
+        font-size: variables.$font-size-medium; 
         color: variables.$text-light;
     }
 
@@ -95,10 +94,12 @@
 
     &__input {
         width: 100%;
-        padding: 0.8rem 0;
+        padding: 0.5rem 0.25rem;
         font-size: 0.95rem;
         color: variables.$text-dark;
-        background: transparent;
+        background: variables.$bg-input;
+        border-radius: variables.$border-radius-small;
+        margin-bottom: 0.75rem;
         border: none;
         outline: none;
     }
@@ -125,8 +126,11 @@
         &:hover {
             text-decoration: underline;
         }
-    }
+    } 
+}
 
-  
-   
+textarea{
+    resize: vertical;
+    min-height: 100px;
+    max-height: 200px;
 }

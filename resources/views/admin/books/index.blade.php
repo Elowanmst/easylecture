@@ -27,7 +27,7 @@
                 <tr>
                     <td>
                         @if ($book->image)
-                            <img src="{{ asset('storage/' . $book->image) }}" alt="{{ $book->title }}">
+                            <img src="{{ asset($book->image) }}" alt="{{ $book->title }}" loading="lazy">
                         @else
                             <span style="color: #666;">-</span>
                         @endif

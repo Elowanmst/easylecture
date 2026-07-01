@@ -47,12 +47,12 @@
                     <li class="header__user-menu">
                         <input type="checkbox" id="user-toggle" class="user-toggle">
 
-                        <label for="user-toggle" class="header__user-button">
-                            👤 {{ auth()->user()->name }}
+                        <label for="user-toggle" class="button button--secondary button--big">
+                            {{ auth()->user()->name }}
                         </label>
 
                         <div class="header__dropdown">
-                            <a href="{{ url('/compte') }}" class="header__dropdown-item">
+                            <a href="{{ route('mon-compte') }}" class="header__dropdown-item">
                                 Compte
                             </a>
 
