@@ -5,8 +5,8 @@
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden; /* Pour ne pas voir le menu burger */
-    
-     /* Header */
+
+    /* Header */
 
     main {
         flex: 1;
@@ -22,15 +22,9 @@
         font-size: 2rem;
         color: $text-light;
         text-align: center;
-
-        
     }
 
-    
-
     &--with-lines {
-        
-
         // overflow: hidden;
         // position: relative;
 
@@ -39,11 +33,11 @@
         //     position: absolute;
         //     top: -80px;
         //     left: -20px;
-        //     width: 55px; 
+        //     width: 55px;
         //     height: 500px;
         //     background-color: variables.$primary-color;
         //     transform: rotate(30deg);
-        //     box-shadow: 80px 0 0 variables.$primary-color; 
+        //     box-shadow: 80px 0 0 variables.$primary-color;
         // }
 
         // &::after {
@@ -58,13 +52,13 @@
         // }
 
         //second method
-        background: linear-gradient(135deg, $bg-card 10vw, $primary-color 10vw 15vw, transparent 0),
-                    linear-gradient(135deg, $bg-card 17vw, $primary-color 17vw 22vw, transparent 0),
-                    linear-gradient(135deg, $bg-card 95vw, $primary-color 95vw 100vw, $bg-card 0vw);
+        background:
+            linear-gradient(135deg, $bg-card 10vw, $primary-color 10vw 15vw, transparent 0),
+            linear-gradient(135deg, $bg-card 17vw, $primary-color 17vw 22vw, transparent 0),
+            linear-gradient(135deg, $bg-card 95vw, $primary-color 95vw 100vw, $bg-card 0vw);
 
         background-repeat: no-repeat;
     }
-
 
     &--content-centered {
         main {
@@ -75,4 +69,3 @@
         }
     }
 }
-

@@ -35,14 +35,14 @@
 
     &--success {
         background-color: variables.$success-color;
-        border : none;
+        border: none;
         color: variables.$text-light;
         font-size: variables.$font-size-medium;
     }
 
     &--dark {
         background-color: variables.$text-dark;
-        border : none;
+        border: none;
         color: variables.$text-light;
     }
 
@@ -58,30 +58,30 @@
     }
 
     &--compact {
-        padding: 0.2rem 0.80rem;
+        padding: 0.2rem 0.8rem;
         font-size: 13px;
         gap: 5px;
     }
 
-    &__footer{
-        border-radius : 0;
+    &__footer {
+        border-radius: 0;
         background-color: variables.$primary-color;
         border-color: variables.$primary-color;
         color: variables.$text-light;
-        margin-left:0;
+        margin-left: 0;
     }
 
-    &__list{
-        display:flex;
+    &__list {
+        display: flex;
         gap: 1rem;
     }
 
-    &__card{
-        margin : 0.5rem 0;
+    &__card {
+        margin: 0.5rem 0;
         font-family: 'Jersey 25', sans-serif;
     }
 
-    &:hover{
+    &:hover {
         transform: scale(1.05);
     }
 
@@ -92,4 +92,3 @@
         }
     }
 }
-

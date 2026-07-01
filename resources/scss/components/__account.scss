@@ -1,195 +1,195 @@
 @use '_variables';
 
 .account {
-  h1 {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 2.5rem;
-  }
+    h1 {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 2.5rem;
+    }
 }
 
 .account-layout {
-  display: grid;
-  grid-template-columns: minmax(260px, 1fr) minmax(0, 2fr);
-  align-items: start;
-  gap: 2.5rem;
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) minmax(0, 2fr);
+    align-items: start;
+    gap: 2.5rem;
 }
 
 .account-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 2rem;
-
-  h2 {
-    margin: 0 0 0.5rem;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  &__field {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    gap: 0.25rem;
-  }
+    gap: 1.5rem;
+    padding: 2rem;
 
-  &__label {
-    color: variables.$color-grey;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  &__input {
-    width: 75%;
-    padding: 0.7rem 1rem;
-    font-size: 0.95rem;
-    color: variables.$text-dark;
-    background: variables.$bg-input;
-    border: variables.$border-width variables.$border-style variables.$color-grey;
-    border-radius: variables.$border-radius-small;
-    outline: none;
-
-    &:focus {
-      border-color: variables.$primary-color;
-      box-shadow: 0 0 0 2px variables.$primary-color-dark;
+    h2 {
+        margin: 0 0 0.5rem;
     }
-  }
 
-  &__error {
-    color: rgb(200, 35, 35);
-    font-size: 0.85rem;
-  }
+    p {
+        margin: 0;
+    }
 
-  &__success {
-    padding: 0.75rem 1rem;
-    border-radius: variables.$border-radius-small;
-    background: variables.$success-background-color;
-    color: variables.$success-color;
-    font-size: 0.9rem;
-  }
+    &__field {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
 
-  form {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
+    &__label {
+        color: variables.$color-grey;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
 
-  .button {
-    width: 100%;
-    text-align: center;
-  }
+    &__input {
+        width: 75%;
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
+        color: variables.$text-dark;
+        background: variables.$bg-input;
+        border: variables.$border-width variables.$border-style variables.$color-grey;
+        border-radius: variables.$border-radius-small;
+        outline: none;
+
+        &:focus {
+            border-color: variables.$primary-color;
+            box-shadow: 0 0 0 2px variables.$primary-color-dark;
+        }
+    }
+
+    &__error {
+        color: rgb(200, 35, 35);
+        font-size: 0.85rem;
+    }
+
+    &__success {
+        padding: 0.75rem 1rem;
+        border-radius: variables.$border-radius-small;
+        background: variables.$success-background-color;
+        color: variables.$success-color;
+        font-size: 0.9rem;
+    }
+
+    form {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .account-orders {
-  h2 {
-    margin: 0 0 1.5rem;
-  }
+    h2 {
+        margin: 0 0 1.5rem;
+    }
 
-  &__empty {
-    margin: 0 0 1.75rem;
-    color: variables.$color-grey;
-  }
+    &__empty {
+        margin: 0 0 1.75rem;
+        color: variables.$color-grey;
+    }
 
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
 }
 
 .order-card {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1.25rem 1.5rem;
-
-  p {
-    margin: 0;
-  }
-
-  &__head {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  &__number {
-    font-size: variables.$font-size-medium;
-    font-weight: 700;
-  }
-
-  &__date {
-    color: variables.$color-grey;
-    font-size: 0.9rem;
-  }
-
-  &__items {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
 
-    li {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      color: variables.$secondary-color;
-      font-size: 0.95rem;
+    p {
+        margin: 0;
     }
-  }
 
-  &__foot {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid rgba(variables.$color-grey, 0.3);
-    padding-top: 0.85rem;
-  }
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+    }
 
-  &__count {
-    color: variables.$secondary-color;
-  }
+    &__number {
+        font-size: variables.$font-size-medium;
+        font-weight: 700;
+    }
 
-  &__total {
-    font-size: variables.$font-size-medium;
-    font-weight: 700;
-    color: variables.$primary-color;
-  }
+    &__date {
+        color: variables.$color-grey;
+        font-size: 0.9rem;
+    }
+
+    &__items {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            color: variables.$secondary-color;
+            font-size: 0.95rem;
+        }
+    }
+
+    &__foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgba(variables.$color-grey, 0.3);
+        padding-top: 0.85rem;
+    }
+
+    &__count {
+        color: variables.$secondary-color;
+    }
+
+    &__total {
+        font-size: variables.$font-size-medium;
+        font-weight: 700;
+        color: variables.$primary-color;
+    }
 }
 
 // ---- Statut ----
 .order-status {
-  padding: 0.3rem 0.85rem;
-  border-radius: variables.$border-radius-full;
-  font-size: 0.85rem;
-  font-weight: 700;
-  white-space: nowrap;
-  background: variables.$secondary-background-color;
-  color: variables.$secondary-color;
+    padding: 0.3rem 0.85rem;
+    border-radius: variables.$border-radius-full;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+    background: variables.$secondary-background-color;
+    color: variables.$secondary-color;
 
-  &--paid,
-  &--completed {
-    background: variables.$success-background-color;
-    color: variables.$success-color;
-  }
+    &--paid,
+    &--completed {
+        background: variables.$success-background-color;
+        color: variables.$success-color;
+    }
 
-  &--pending {
-    background: variables.$primary-background-color;
-    color: variables.$primary-color;
-  }
+    &--pending {
+        background: variables.$primary-background-color;
+        color: variables.$primary-color;
+    }
 }
 
 @media screen and (max-width: variables.$mediascreen-l) {
-  .account-layout {
-    grid-template-columns: 1fr;
-  }
+    .account-layout {
+        grid-template-columns: 1fr;
+    }
 }

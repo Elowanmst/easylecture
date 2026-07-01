@@ -67,8 +67,6 @@ Route::get('/mention-legale', function () {
     return view('ML');
 });
 
-
-
 Route::get('/product/{book}', [BookController::class, 'show'])->name('product.show');
 
 Route::prefix('admin')->group(function () {

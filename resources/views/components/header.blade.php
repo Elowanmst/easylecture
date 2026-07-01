@@ -3,7 +3,6 @@
         <nav class="header__nav">
             <a href="{{ url('/') }}" class="header__nav__logo">EasyLecture</a>
             <div class="header__nav-links">
-
                 <div id="menuToggle">
                     <div class="burger-button">
                         <input type="checkbox" id="menuCheckbox" />
@@ -15,16 +14,20 @@
                     <ul id="menu">
                         <li>
                             <a href="{{ url('/boutique') }}">
-                                <label for="menuCheckbox" onclick="this.parentNode.click();">Boutique</label>
+                                <label for="menuCheckbox" onclick="this.parentNode.click()">Boutique</label>
                             </a>
                         </li>
                         <li>
                             <a href="{{ url('/contact') }}">
-                                <label for="menuCheckbox" onclick="this.parentNode.click();">Contact</label>
+                                <label for="menuCheckbox" onclick="this.parentNode.click()">Contact</label>
                             </a>
                         </li>
-                        <li><label for="menuCheckbox"><a href="{{ url('/cart') }}">Panier</a></label></li>
-                        <li><label for="menuCheckbox"><a href="{{ url('/login') }}">Login</a></label></li>
+                        <li>
+                            <label for="menuCheckbox"><a href="{{ url('/cart') }}">Panier</a></label>
+                        </li>
+                        <li>
+                            <label for="menuCheckbox"><a href="{{ url('/login') }}">Login</a></label>
+                        </li>
                         <li>
                             <a href="{{ url('/register') }}" target="_blank">Sign Up</a>
                         </li>
@@ -37,37 +40,29 @@
                     @guest
                         <li><a href="{{ route('login') }}" class="header__nav-link">Login</a></li>
                         <li>
-                            <a href="{{ route('register') }}" class="button button--primary button--big">
-                                Sign Up
-                            </a>
+                            <a href="{{ route('register') }}" class="button button--primary button--big"> Sign Up </a>
                         </li>
                     @endguest
 
                     @auth
-                    <li class="header__user-menu">
-                        <input type="checkbox" id="user-toggle" class="user-toggle">
+                        <li class="header__user-menu">
+                            <input type="checkbox" id="user-toggle" class="user-toggle" />
 
-                        <label for="user-toggle" class="button button--secondary button--big">
-                            {{ auth()->user()->name }}
-                        </label>
+                            <label for="user-toggle" class="button button--secondary button--big">
+                                {{ auth()->user()->name }}
+                            </label>
 
-                        <div class="header__dropdown">
-                            <a href="{{ route('mon-compte') }}" class="header__dropdown-item">
-                                Compte
-                            </a>
+                            <div class="header__dropdown">
+                                <a href="{{ route('mon-compte') }}" class="header__dropdown-item"> Compte </a>
 
-                            <a href="{{ route('library.index') }}" class="header__dropdown-item">
-                                Mes livres
-                            </a>
+                                <a href="{{ route('library.index') }}" class="header__dropdown-item"> Mes livres </a>
 
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <button type="submit" class="header__dropdown-item header__logout">
-                                    Logout
-                                </button>
-                            </form>
-                        </div>
-                    </li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="header__dropdown-item header__logout">Logout</button>
+                                </form>
+                            </div>
+                        </li>
                     @endauth
                     <li>
                         <a href="{{ url('/cart') }}" class="header__nav-link" aria-label="Mon Panier">
@@ -76,7 +71,7 @@
                                 <circle cx="20" cy="21" r="1"></circle>
                                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                             </svg>
-                         </a>
+                        </a>
                     </li>
                 </ul>
             </div>

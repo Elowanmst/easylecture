@@ -45,7 +45,8 @@
         flex-direction: column;
         text-align: center;
 
-        &__text, &__image {
+        &__text,
+        &__image {
             width: 100%;
         }
 
@@ -59,32 +60,40 @@
         }
     }
 
-    animation: header-image-animation linear forwards; 
-    animation-timeline: view(); 
+    animation: header-image-animation linear forwards;
+    animation-timeline: view();
     animation-range: exit;
-
 }
 
 @keyframes fade-out {
-    to { opacity: 0; }
+    to {
+        opacity: 0;
+    }
 }
 
 @keyframes header-image-animation {
-    25% { opacity: 1; }
-    100% { opacity: 0; scale: 1.5; }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        scale: 1.5;
+    }
 }
 
 @media (prefers-reduced-motion: no-preference) {
     .card {
-        scale: .8; opacity  : 0;
+        scale: 0.8;
+        opacity: 0;
         animation: fade-in linear forwards;
         animation-timeline: view();
-        animation-range: entry-crossing;  
+        animation-range: entry-crossing;
     }
 
     @keyframes fade-in {
         to {
-            scale: 1; opacity: 1;
+            scale: 1;
+            opacity: 1;
         }
     }
 }
@@ -92,5 +101,5 @@
 @media screen and (max-width: variables.$mediascreen-m) {
     .mb5 {
         margin-top: 10rem;
-    }    
+    }
 }
