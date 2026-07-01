@@ -60,10 +60,16 @@
     </div>
 
     <div class="form__group">
+        <label for="pdf" class="form__label">Fichier PDF</label>
+        <input type="file" id="pdf" name="pdf" class="form__input" accept="application/pdf">
+        @error('pdf') <span class="form__error">{{ $message }}</span> @enderror
+    </div>
+
+    <div class="form__group">
         <label for="image" class="form__label">Image de couverture</label>
         @if ($book->image)
             <div class="admin-form-image">
-                <img src="{{ asset('storage/' . $book->image) }}" alt="{{ $book->title }}">
+                <img src="{{ asset($book->image) }}" alt="{{ $book->title }}" loading="lazy" height="200px">
             </div>
         @endif
         <input type="file" id="image" name="image" class="form__input" accept="image/*">
