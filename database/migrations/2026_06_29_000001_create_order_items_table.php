@@ -12,8 +12,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('order_id')->constrained()->cascadeOnDelete();
             $table->foreignId('book_id')->nullable()->constrained()->nullOnDelete();
-            $table->string('title');          // snapshot du titre au moment de l'achat
-            $table->decimal('price', 8, 2);   // snapshot du prix unitaire
+            $table->string('title');
+            $table->decimal('price', 8, 2);
             $table->unsignedInteger('quantity');
             $table->timestamps();
         });

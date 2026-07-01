@@ -22,10 +22,13 @@
         <h2 class="mb4">Meilleures Ventes - Best Sellers</h2>
 
         <div class="shop-products">
-            @include ("components/card-product-best-seller")
-            @include ("components/card-product-best-seller")
-            @include ("components/card-product-best-seller")
-            @include ("components/card-product-best-seller")
+            @foreach($books as $item)
+                @if($item->book)
+                    @include('components.card-product-best-seller', [
+                        'book' => $item->book
+                    ])
+                @endif
+            @endforeach
         </div>
     </section>
 

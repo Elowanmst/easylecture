@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\OrderItem;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
@@ -47,7 +49,20 @@ class BookController extends Controller
         return view('product', ['book' => $book]);
     }
 
-        // ===== PAGES ADMIN =====
+    public function bestseller()
+    {
+        $books = OrderItem::select('book_id',DB::raw('SUM(quantity) as total_sales'))
+            ->whereNotNull('book_id')
+            ->groupBy('book_id')
+            ->orderByDesc('total_sales')
+            ->with('book')
+            ->limit(4)
+            ->get();
+
+        return view('welcome', ['books' => $books]);
+    }
+    
+    // ===== PAGES ADMIN =====
 
     public function adminIndex()
     {
@@ -137,6 +152,4 @@ class BookController extends Controller
 
         return redirect()->route('admin.books.index')->with('success', 'Livre supprimé avec succès!');
     }
-
-
 }
