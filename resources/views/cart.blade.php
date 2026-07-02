@@ -97,13 +97,11 @@
 
             <div class="btn">
                 <div>
-                    <a href="{{ url('/boutique') }}" class="button button--secondary">
-                        ← Continuer mes achats
-                    </a>
-
-                    <a href="{{ route('checkout') }}" class="button button--success">
-                        Commander
-                    </a>
+                    <a href="{{ url('/boutique') }}" class="button button--secondary">← Continuer mes achats</a>
+                    <form method="POST" action="{{ route('cart.checkout') }}">
+                        @csrf
+                        <button type="submit" class="button button--success">Commander</button>
+                    </form>
                 </div>
             </div>
 

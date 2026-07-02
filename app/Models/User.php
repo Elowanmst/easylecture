@@ -23,6 +23,11 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function isAdmin(): bool
+    {
+        return str_ends_with($this->email, '@easylecture.fr');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -44,10 +49,5 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    public function isAdmin(): bool
-    {
-        return str_ends_with($this->email, '@easylecture.fr');
     }
 }
