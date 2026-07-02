@@ -8,18 +8,14 @@
 
     <h1 class="form-card__title">Finalisation de commande</h1>
 
-    {{-- ===================== --}}
-    {{-- UTILISATEUR CONNECTÉ --}}
-    {{-- ===================== --}}
+   
     @auth
 
         <p class="checkout-text">
             Bonjour <strong>{{ auth()->user()->name }}</strong>, voici votre récapitulatif.
         </p>
 
-        {{-- ===================== --}}
-        {{-- RECAP PANIER (TON CODE ADAPTÉ) --}}
-        {{-- ===================== --}}
+  
         <div class="checkout-cart">
 
             <section class="cart-items">
