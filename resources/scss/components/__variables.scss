@@ -28,14 +28,14 @@ $text-light: #ffffff;
 $text-dark: #1a1a1a;
 $text-dark-light: lighten($text-dark, 20%);
 $text-link: #4a9edd;
-$transition: all 0.2s ease-in-out;
+$transition: all 0.35s ease-in-out;
 
-$font-size-base:1.25rem;
-$font-size-medium:1.125rem;
-$font-size-small:1rem;
+$font-size-base: 1.25rem;
+$font-size-medium: 1.125rem;
+$font-size-small: 1rem;
 
-$mediascreen-s : 576px;
-$mediascreen-m : 768px;
-$mediascreen-l : 992px;
-$mediascreen-xl : 1200px;
-$mediascreen-xxl : 1400px;
+$mediascreen-s: 576px;
+$mediascreen-m: 768px;
+$mediascreen-l: 992px;
+$mediascreen-xl: 1200px;
+$mediascreen-xxl: 1400px;

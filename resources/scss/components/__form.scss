@@ -1,6 +1,5 @@
 @use '_variables';
 
-
 .form-card {
     background-color: variables.$bg-card;
     border-radius: variables.$border-radius-card;
@@ -16,7 +15,6 @@
     border-width: variables.$border-width;
     border-style: variables.$border-style;
 
-    
     &__back {
         position: absolute;
         top: 1.2rem;
@@ -25,7 +23,6 @@
         height: 2.2rem;
     }
 
-    
     &__title {
         font-size: 2.5rem;
         font-weight: 900;
@@ -37,7 +34,6 @@
     }
 }
 
-
 .form {
     display: flex;
     flex-direction: column;
@@ -46,16 +42,18 @@
     &__group {
         display: flex;
         flex-direction: column;
-        gap: 0.4rem;
+        gap: 0.5rem;
     }
 
     &__label {
-        font-size: 0.95rem;
-        font-weight: 700;
+        font-size: variables.$font-size-medium;
         color: variables.$text-light;
+        
+        &--admin{
+            margin-top : 1rem;
+        }
     }
 
-   
     &__input-wrapper {
         position: relative;
         display: flex;
@@ -65,7 +63,7 @@
         padding: 0 1rem;
 
         &:has(textarea) {
-        border-radius: variables.$border-radius;
+            border-radius: variables.$border-radius;
         }
 
         &:focus-within {
@@ -95,15 +93,15 @@
 
     &__input {
         width: 100%;
-        padding: 0.8rem 0;
+        padding: 0.5rem 0.25rem;
         font-size: 0.95rem;
         color: variables.$text-dark;
-        background: transparent;
+        background: variables.$bg-input;
+        border-radius: variables.$border-radius-small;
         border: none;
         outline: none;
     }
 
-    
     &__link {
         font-size: 0.85rem;
         color: variables.$text-link;
@@ -126,7 +124,10 @@
             text-decoration: underline;
         }
     }
+}
 
-  
-   
+textarea {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 200px;
 }

@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>{{ config('app.name', 'EasyLecture') }}</title>
+    <title>{{ config('app.name', 'EasyLecture') }}</title>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
-        
-        @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-            @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/scss/app.scss']) 
-        @endif
-    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet" />
 
-    <body class="body @yield('body-class')">
-        <a href="#main-content" class="screen-reader-text">Skip to main content</a>
-        @include("components.header")
+    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+        @vite (['resources/css/app.css', 'resources/js/app.js', 'resources/scss/app.scss'])
+    @endif
+</head>
 
-        <div class="scroll-watcher"></div>
+<body class="body @yield('body-class')">
+    <a href="#main-content" class="screen-reader-text">Skip to main content</a>
+    @include ("components.header")
 
-        <main id="main-content"> @yield('content') </main>
+    <div class="scroll-watcher"></div>
 
-        @include("components.footer")
+    <main id="main-content">@yield ('content')</main>
 
-    </body>
+    @include ("components.footer")
+</body>
 </html>

@@ -1,22 +1,25 @@
-@use "components/_reset";
-@use "components/_base";
-@use "components/_container";
-@use "components/_button";
-@use "components/_form";
-@use "components/_header";
-@use "components/_variables";
-@use "components/_footer";
-@use "components/_welcome";
-@use "components/_cart";
-@use "components/_account";
-@use "components/_reader";
-@use "components/_admin";
-@use "_boutique";
-@use "components/_card";
-@use "_ML";
-@use "components/_jolie";
-@use "components/_product";
-@use "components/_utilities";
+@use 'components/_account';
+@use 'components/_admin-2';
+@use 'components/_admin-3';
+@use 'components/_admin';
+@use 'components/_base';
+@use 'components/_button';
+@use 'components/_card';
+@use 'components/_cart';
+@use 'components/_container';
+@use 'components/_footer';
+@use 'components/_form';
+@use 'components/_header';
+@use 'components/_jolie';
+@use 'components/_product';
+@use 'components/_reader';
+@use 'components/_reset';
+@use 'components/_utilities';
+@use 'components/_variables';
+@use 'components/_welcome';
+@use '_boutique';
+@use '_ML';
+
 
 body {
     font-family: 'Jersey 25', sans-serif;
@@ -35,8 +38,8 @@ body {
     z-index: 1000;
     background-color: variables.$primary-color;
     width: 0%;
-    animation: scroll-watcher linear ;
-    animation-timeline: scroll(); 
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
 }
 
 @keyframes scroll-watcher {
@@ -45,37 +48,35 @@ body {
     }
 }
 
-
-
 //main content
 .screen-reader-text {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-  z-index: 9999;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    z-index: 9999;
 
-  &:focus {
-    width: auto;
-    height: auto;
-    padding: 1em 1.5em;
-    margin: 0;
-    overflow: visible;
-    clip: auto;
-    white-space: normal;
-    background-color: variables.$bg-card;
-    color: variables.$text-light;
-    border: 2px solid variables.$primary-color;
-    border-radius: variables.$border-radius-small;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    text-decoration: none;
-    font-size: variables.$font-size-small;
-  }
+    &:focus {
+        width: auto;
+        height: auto;
+        padding: 1em 1.5em;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        background-color: variables.$bg-card;
+        color: variables.$text-light;
+        border: 2px solid variables.$primary-color;
+        border-radius: variables.$border-radius-small;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        text-decoration: none;
+        font-size: variables.$font-size-small;
+    }
 }
