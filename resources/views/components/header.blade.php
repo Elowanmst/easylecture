@@ -58,8 +58,8 @@
                             </a>
 
 
-                            
-                            @if(auth()->user()->isAdmin())
+
+                            @if (auth()->user()->isAdmin())
                                 <a href="{{ route('admin.books.index') }}" class="header__dropdown-item">
                                     Admin
                                 </a>
