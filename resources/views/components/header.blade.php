@@ -57,9 +57,9 @@
                                 Compte
                             </a>
 
-
-                            
-                            {{ dd(auth()->user()->email) }}
+                            {{ dd('TEST HEADER') }}
+                            {{ dd(auth()->user()->email, auth()->check()) }}
+                            @if(true)
                                 <a href="{{ route('admin.books.index') }}" class="header__dropdown-item">
                                     Admin
                                 </a>
