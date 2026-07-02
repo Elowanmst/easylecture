@@ -87,9 +87,17 @@
                                 {{ auth()->user()->name }}
                             </label>
 
+
+
+                            
+                            {{ dd(auth()->user()->email) }}
+                                <a href="{{ route('admin.books.index') }}" class="header__dropdown-item">
+                                    Admin
+
                             <div class="header__dropdown">
                                 <a href="{{ route('mon-compte') }}" class="header__dropdown-item">
                                     Compte
+
                                 </a>
 
                                 <a href="{{ route('library.index') }}" class="header__dropdown-item">

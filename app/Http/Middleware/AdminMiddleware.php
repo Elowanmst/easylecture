@@ -10,7 +10,6 @@ class AdminMiddleware
 {
     public function handle(Request $request, Closure $next): Response
     {
-        dd('ADMIN MIDDLEWARE HIT');
         $user = $request->user();
 
         
