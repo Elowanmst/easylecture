@@ -59,7 +59,7 @@
 
 
                             
-                            @if(auth()->user()->isAdmin())
+                            {{ dd(auth()->user()->email) }}
                                 <a href="{{ route('admin.books.index') }}" class="header__dropdown-item">
                                     Admin
                                 </a>
