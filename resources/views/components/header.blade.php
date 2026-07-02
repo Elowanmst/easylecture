@@ -80,38 +80,38 @@
                     @endguest
 
                     @auth
-                        <li class="header__user-menu">
-                            <input type="checkbox" id="user-toggle" class="user-toggle">
+                    <li class="header__user-menu">
+                        <input type="checkbox" id="user-toggle" class="user-toggle">
 
-                            <label for="user-toggle" class="button button--secondary button--big">
-                                {{ auth()->user()->name }}
-                            </label>
+                        <label for="user-toggle" class="button button--secondary button--big">
+                            {{ auth()->user()->name }}
+                        </label>
 
+                        <div class="header__dropdown">
 
+                            <a href="{{ route('mon-compte') }}" class="header__dropdown-item">
+                                Compte
+                            </a>
 
-
-                            @if (auth()->user()->isAdmin())
+                            @if(auth()->user()->isAdmin())
                                 <a href="{{ route('admin.books.index') }}" class="header__dropdown-item">
                                     Admin
-
-                            <div class="header__dropdown">
-                                <a href="{{ route('mon-compte') }}" class="header__dropdown-item">
-                                    Compte
-
                                 </a>
+                            @endif
 
-                                <a href="{{ route('library.index') }}" class="header__dropdown-item">
-                                    Mes livres
-                                </a>
+                            <a href="{{ route('library.index') }}" class="header__dropdown-item">
+                                Mes livres
+                            </a>
 
-                                <form method="POST" action="{{ route('logout') }}">
-                                    @csrf
-                                    <button type="submit" class="header__dropdown-item header__logout">
-                                        Logout
-                                    </button>
-                                </form>
-                            </div>
-                        </li>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="header__dropdown-item header__logout">
+                                    Logout
+                                </button>
+                            </form>
+
+                        </div>
+                    </li>
                     @endauth
 
                     <li>
