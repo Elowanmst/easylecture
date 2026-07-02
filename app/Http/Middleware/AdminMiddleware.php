@@ -12,12 +12,12 @@ class AdminMiddleware
     {
         $user = $request->user();
 
-        // utilisateur non connecté
+        
         if (!$user) {
             return redirect()->route('login');
         }
 
-        // vérifie le domaine email
+        
         if (!str_ends_with($user->email, '@easylecture.fr')) {
             abort(403, 'Accès interdit.');
         }
