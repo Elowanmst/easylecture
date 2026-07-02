@@ -1,22 +1,25 @@
-@use 'components/_reset';
+@use 'components/_account';
+@use 'components/_admin 2';
+@use 'components/_admin 3';
+@use 'components/_admin';
 @use 'components/_base';
-@use 'components/_container';
 @use 'components/_button';
+@use 'components/_card';
+@use 'components/_cart';
+@use 'components/_container';
+@use 'components/_footer';
 @use 'components/_form';
 @use 'components/_header';
-@use 'components/_variables';
-@use 'components/_footer';
-@use 'components/_welcome';
-@use 'components/_cart';
-@use 'components/_account';
-@use 'components/_reader';
-@use 'components/_admin';
-@use '_boutique';
-@use 'components/_card';
-@use '_ML';
 @use 'components/_jolie';
 @use 'components/_product';
+@use 'components/_reader';
+@use 'components/_reset';
 @use 'components/_utilities';
+@use 'components/_variables';
+@use 'components/_welcome';
+@use '_boutique';
+@use '_ML';
+
 
 body {
     font-family: 'Jersey 25', sans-serif;
