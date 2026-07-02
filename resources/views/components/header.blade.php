@@ -29,7 +29,7 @@
                             <a href="{{ url('/register') }}" target="_blank">Sign Up</a>
                         </li>
                     </ul>
-                </div>
+                </div>lll
 
                 <ul class="header__nav-links menubase">
                     <li><a href="{{ url('/boutique') }}" class="header__nav-link">Boutique</a></li>
