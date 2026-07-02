@@ -1,6 +1,7 @@
 # projet annuel site e-commerce de vente de E-Book "easylecture"
 
 ## projet et architecture
+
 ce projet est un site de e-commerce sur la vente de E-Book
 
 En termes d'architecture, l’application adopte une architecture monolithique basée sur le modèle MVC, propulsée par
@@ -11,6 +12,7 @@ L'utilisation de Blade et Livewire permet d’optimiser l’expérience utilisat
 navigation fluide et sans rechargement complet de page.
 
 La base de données est :
+
 - En développement : SQLite, pour sa simplicité de déploiement et sa rapidité. BDD relationelle car nous voulons avoir une integrité forte car il y aura des donnée sensible sur notre site comparer à une base de donnée non relationnel (NoSQL)
 - En production : à definir
 
@@ -19,50 +21,51 @@ bibliothèque Spatie Laravel Medialibrary
 
 La gestion de l'admin est géré par filament
 
-
 ## mise en place / installation
 
 ### installation des dependances
-````bash
+
+```bash
 composer install
 
-npm install 
+npm install
 
 npm run build
-````
+```
 
 ### fichier .env
-````bash
+
+```bash
 cp .env.example .env
-````
+```
 
 ### key generate
-````bash
+
+```bash
 php artisan key:generate
-````
+```
 
 ### migration BDD
 
-````bash
+```bash
 php artisan migrate
-````
+```
 
 ### lancement
-````bash
-npm run dev # lancement du front 
+
+```bash
+npm run dev # lancement du front
 php artisan serve # lancement du server (pas important)
-````
+```
 
 ### resumé
-pour lancer le projet vous devez lancer ses commandes ; 
-````bash
+
+pour lancer le projet vous devez lancer ses commandes ;
+
+```bash
 composer install # dependances
 cp .env.example .env # creation du .env
 php artisan key:generate # generation de la clé
 php artisan migrate # si besoin, si il y a une des migration de faite
-php artisan serve # lancement du serveur 
-````
-
-
-
-
+php artisan serve # lancement du serveur
+```

@@ -1,4 +1,4 @@
-@use "components/_variables";
+@use 'components/_variables';
 
 .shop {
     display: inline;
@@ -20,13 +20,13 @@
         margin-bottom: 3rem;
     }
 
-    &-filtre { 
+    &-filtre {
         display: inline;
 
         &__links {
             display: flex;
             align-items: center;
-            gap : 1rem;
+            gap: 1rem;
             padding: 0;
             list-style: none;
             margin-bottom: 2%;
@@ -37,7 +37,7 @@
             color: variables.$text-light;
             font-size: variables.$font-size-small;
             font-weight: 500;
-            padding : 0.5rem 1rem;
+            padding: 0.5rem 1rem;
             transition: variables.$transition;
             text-decoration: none;
             border-radius: variables.$border-radius-small;
@@ -80,8 +80,7 @@
     }
 
     @media screen and (max-width: variables.$mediascreen-m) {
-
-        .shop-filtre__links{
+        .shop-filtre__links {
             display: flex;
             justify-content: center;
         }

@@ -37,7 +37,7 @@
         text-align: left;
     }
 
-    &__description{
+    &__description {
         font-size: 1.125rem;
         color: #707070;
         margin-bottom: 1rem;
@@ -58,17 +58,15 @@
                 transform: scale(1.05);
             }
         }
-
     }
 
-    &__button{
+    &__button {
         display: flex;
         gap: 1rem;
         justify-content: center;
     }
 
     @media screen and (max-width: $mediascreen-m) {
-
         &__title,
         &__price {
             text-align: center;

@@ -1,5 +1,3 @@
-
-
 <div class="form-card">
     <button class="button button--dark button--circle form-card__back">←</button>
     <h1 class="form-card__title">Login</h1>
@@ -9,7 +7,7 @@
             <label id="username-forgetmdp" class="form__label">Nom Utilisateur :</label>
             <div class="form__input-wrapper">
                 <span class="form__icon">👤</span>
-                <input id="username-forgetmdp" type="text" class="form__input">
+                <input id="username-forgetmdp" type="text" class="form__input" />
             </div>
         </div>
 
@@ -17,7 +15,7 @@
             <label for="mdp-forgetmdp" class="form__label">Mot de Passe :</label>
             <div class="form__input-wrapper">
                 <span class="form__icon">🔑</span>
-                <input id="mdp-forgetmdp" type="password" class="form__input">
+                <input id="mdp-forgetmdp" type="password" class="form__input" />
                 <span class="form__icon-right">afficher</span>
             </div>
             <a href="#" class="form__link">Mot de Passe Oublié ?</a>

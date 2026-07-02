@@ -18,10 +18,10 @@ class CartController extends Controller
         ['items' => $items, 'subtotal' => $subtotal, 'shipping' => $shipping, 'total' => $total] = $this->summary();
 
         return view('cart', [
-            'items'    => $items,
+            'items' => $items,
             'subtotal' => $subtotal,
             'shipping' => $shipping,
-            'total'    => $total,
+            'total' => $total,
         ]);
     }
 
@@ -33,8 +33,6 @@ class CartController extends Controller
             return redirect()->route('cart.index');
         }
 
-        // On envoie à Stripe UNE SEULE ligne avec le total déjà calculé,
-        // pas le détail des produits. Stripe attend un montant en centimes.
         Stripe::setApiKey(config('services.stripe.secret'));
 
         $session = StripeSession::create([
@@ -53,8 +51,6 @@ class CartController extends Controller
             'cancel_url' => route('cart.index'),
         ]);
 
-        // On enregistre une commande "pending" avec un instantané du panier,
-        // elle passera "paid" au retour de Stripe (cart.success).
         $this->storePendingOrder($summary, $session->id);
 
         return redirect($session->url);
@@ -76,9 +72,6 @@ class CartController extends Controller
             ->with('cart_message', 'Merci ! Votre paiement a bien été reçu.');
     }
 
-    /**
-     * Crée la commande et son instantané d'articles avant la redirection Stripe.
-     */
     private function storePendingOrder(array $summary, string $stripeSessionId): void
     {
         $order = Order::create([

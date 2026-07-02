@@ -14,10 +14,10 @@
 
     &__description {
         color: variables.$text-light;
-        font-size : variables.$font-size-small;
+        font-size: variables.$font-size-small;
     }
 
-    &__columns{
+    &__columns {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 1rem;
@@ -35,7 +35,7 @@
             justify-content: center;
         }
     }
-    
+
     &__nav {
         display: flex;
         justify-content: space-between;
@@ -44,20 +44,20 @@
         padding: 0.75rem 0;
         margin: 0 auto;
 
-        &--input{
+        &--input {
             border: variables.$border-width variables.$border-style variables.$primary-color;
-            padding : 0.2rem;
+            padding: 0.2rem;
         }
     }
 
     &__paragraph {
-        font-size : variables.$font-size-small;
+        font-size: variables.$font-size-small;
         color: variables.$text-light;
         text-align: center;
     }
 
     &__newsletter {
-        display:flex;
+        display: flex;
     }
 
     &__link {
@@ -76,9 +76,9 @@
     &__title {
         border-width: variables.$border-width;
         border-style: variables.$border-style;
-        border-color : variables.$primary-color;
-        padding : 0.5rem;
-        font-size : variables.$font-size-small;
+        border-color: variables.$primary-color;
+        padding: 0.5rem;
+        font-size: variables.$font-size-small;
         color: variables.$text-light;
     }
 
@@ -93,17 +93,17 @@
     }
 
     @media screen and (max-width: variables.$mediascreen-m) {
-        flex-direction: column;        
+        flex-direction: column;
         text-align: center;
     }
 
     @media screen and (max-width: variables.$mediascreen-l) {
-        flex-direction: column;        
+        flex-direction: column;
         text-align: center;
     }
 
     @media screen and (max-width: variables.$mediascreen-xl) {
-        flex-direction: column;        
+        flex-direction: column;
         text-align: center;
     }
 }
