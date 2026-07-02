@@ -50,7 +50,7 @@
                             </li>
                         @endauth
                     </ul>
-                </div>lll
+                </div>
 
                 <ul class="header__nav-links menubase">
                     <li>
@@ -88,9 +88,9 @@
                             </label>
 
 
-                            {{ dd('TEST HEADER') }}
-                            {{ dd(auth()->user()->email, auth()->check()) }}
-                            @if(true)
+
+                            
+                            @if(auth()->user()->isAdmin())
                                 <a href="{{ route('admin.books.index') }}" class="header__dropdown-item">
                                     Admin
 
