@@ -29,7 +29,7 @@
                             <a href="{{ url('/register') }}" target="_blank">Sign Up</a>
                         </li>
                     </ul>
-                </div>lll
+                </div>
 
                 <ul class="header__nav-links menubase">
                     <li><a href="{{ url('/boutique') }}" class="header__nav-link">Boutique</a></li>
@@ -57,9 +57,9 @@
                                 Compte
                             </a>
 
-                            {{ dd('TEST HEADER') }}
-                            {{ dd(auth()->user()->email, auth()->check()) }}
-                            @if(true)
+
+                            
+                            @if(auth()->user()->isAdmin())
                                 <a href="{{ route('admin.books.index') }}" class="header__dropdown-item">
                                     Admin
                                 </a>
