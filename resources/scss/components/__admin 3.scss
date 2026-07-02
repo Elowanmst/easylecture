@@ -1,0 +1,256 @@
+@use '_variables' as *;
+
+// ============================================================
+// ADMIN LAYOUT
+// ============================================================
+
+.admin-layout {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-color: $text-dark;
+}
+
+// ============================================================
+// ADMIN SIDEBAR
+// ============================================================
+
+.admin-sidebar {
+    background-color: $bg-card;
+    padding: 2rem 0;
+    border-right: 3px solid $primary-color;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    overflow-y: auto;
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: $mediascreen-m) {
+        position: static;
+        width: 100%;
+        height: auto;
+
+        border-right: none;
+        border-bottom: 3px solid $primary-color;
+
+        padding: 1.5rem;
+    }
+
+    h2 {
+        color: $primary-color;
+        font-size: 1.75rem;
+        margin: 0 0 2rem;
+        padding: 0 1.5rem;
+        text-align: center;
+        font-weight: 700;
+        width: auto;
+    }
+}
+
+.admin-sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    list-style: none;
+    padding: 0 0.75rem;
+    margin: 0;
+
+    flex: 1;
+
+    li {
+        margin: 0;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        color: $color-grey;
+        text-decoration: none;
+
+        padding: 1rem;
+
+        border-radius: $border-radius-small;
+        border-left: 4px solid transparent;
+
+        transition: $transition;
+
+        font-size: $font-size-medium;
+        font-weight: 600;
+
+        &:hover {
+            background-color: rgba($primary-color, 0.1);
+            color: $primary-color;
+            border-left-color: $primary-color;
+        }
+
+        &.active {
+            background-color: rgba($primary-color, 0.15);
+            color: $primary-color;
+            border-left-color: $primary-color;
+        }
+    }
+}
+
+// ============================================================
+// ADMIN MAIN
+// ============================================================
+
+.admin-main {
+    margin-left: 250px;
+
+    width: calc(100% - 250px);
+    max-width: none;
+    min-width: 0;
+
+    padding: 2rem;
+
+    background-color: $text-dark;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: $mediascreen-m) {
+        width: 100%;
+        margin-left: 0;
+        padding: 1.5rem;
+    }
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 1rem;
+
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+
+    border-bottom: 3px solid $primary-color;
+
+    width: 100%;
+    max-width: none;
+
+    h1 {
+        margin: 0;
+
+        color: $text-light;
+
+        font-size: 2.25rem;
+        font-weight: 700;
+
+        flex: 1;
+
+        width: auto;
+        max-width: none;
+
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: normal;
+        line-height: 1.1;
+    }
+
+    @media screen and (max-width: $mediascreen-m) {
+        flex-direction: column;
+        align-items: flex-start;
+
+        h1 {
+            font-size: 1.75rem;
+        }
+    }
+}
+
+.admin-logout {
+    background-color: $primary-color;
+    color: $text-light;
+
+    padding: 0.75rem 1.5rem;
+
+    border: none;
+    border-radius: $border-radius-small;
+
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-size: $font-size-medium;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: $transition;
+
+    &:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+}
+
+.admin-content {
+    width: 100%;
+    max-width: none;
+
+    flex: 1;
+
+    background-color: $bg-card;
+
+    padding: 2rem;
+
+    border-radius: $border-radius-card;
+    border: 1px solid rgba($primary-color, 0.2);
+}
+
+// ============================================================
+// ADMIN BOOKS HEADER
+// ============================================================
+
+.admin-books-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 1rem;
+
+    width: 100%;
+    max-width: none;
+
+    margin-bottom: 2rem;
+
+    h2 {
+        margin: 0;
+
+        color: $primary-color;
+
+        font-size: 1.75rem;
+        font-weight: 700;
+
+        flex: 1;
+
+        width: auto;
+        max-width: none;
+
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: normal;
+        line-height: 1.1;
+    }
+
+    @media screen and (max-width: $mediascreen-m) {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
