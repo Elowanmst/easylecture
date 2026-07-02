@@ -10,34 +10,39 @@
     text-decoration: none;
     transition: variables.$transition;
     font-size: variables.$font-size-small;
+    font-family: 'Jersey 25', sans-serif;
 
     &--primary {
         background-color: variables.$primary-background-color;
         border-color: variables.$primary-color;
         color: variables.$text-light;
+        font-size: variables.$font-size-medium;
     }
 
     &--secondary {
         background-color: variables.$secondary-background-color;
         border-color: variables.$secondary-color;
         color: variables.$text-light;
+        font-size: variables.$font-size-medium;
     }
 
     &--transparent {
         background-color: transparent;
         border-color: variables.$text-light;
         color: variables.$text-light;
+        font-size: variables.$font-size-medium;
     }
 
     &--success {
         background-color: variables.$success-color;
-        border : none;
+        border: none;
         color: variables.$text-light;
+        font-size: variables.$font-size-medium;
     }
 
     &--dark {
         background-color: variables.$text-dark;
-        border : none;
+        border: none;
         color: variables.$text-light;
     }
 
@@ -53,31 +58,31 @@
     }
 
     &--compact {
-        padding: 0.2rem 0.80rem;
+        padding: 0.2rem 0.8rem;
         font-size: 13px;
         gap: 5px;
     }
 
-    &__footer{
-        border-radius : 0;
+    &__footer {
+        border-radius: 0;
         background-color: variables.$primary-color;
         border-color: variables.$primary-color;
         color: variables.$text-light;
-        margin-left:0;
+        margin-left: 0;
     }
 
-    &__list{
-        display:flex;
+    &__list {
+        display: flex;
         gap: 1rem;
     }
 
-    &__card{
-        margin : 0.5rem 0;
+    &__card {
+        margin: 0.5rem 0;
         font-family: 'Jersey 25', sans-serif;
     }
 
-    &:hover{
-        transform: scale(1.1);
+    &:hover {
+        transform: scale(1.05);
     }
 
     @media screen and (max-width: variables.$mediascreen-m) {
@@ -87,4 +92,3 @@
         }
     }
 }
-

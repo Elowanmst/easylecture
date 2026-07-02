@@ -3,7 +3,8 @@
         <div class="footer__columns">
             <div class="footer__column footer__column--centered">
                 <a href="#" class="footer__logo">EasyLecture</a>
-                <p class="footer__description">Lire, découvrir, vendre <br> Directement ici</p>
+                <p class="footer__description">Lire, découvrir, vendre <br />
+                Directement ici</p>
             </div>
             <div class="footer__column">
                 <nav>
@@ -32,7 +33,7 @@
                     <p class="footer__title">La NewsLetter</p>
                     <p class="footer__paragraph">2 fois par semaines, de nouvelle histoire à decouvrir</p>
                     <div class="footer__newsletter">
-                        <input class="footer__nav--input" type="text" placeholder="Email"></input>
+                        <input class="footer__nav--input" type="text" placeholder="Email" />
                         <button class="button__footer">S'inscrire</button>
                     </div>
                 </ul>

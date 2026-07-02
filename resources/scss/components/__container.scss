@@ -1,4 +1,4 @@
-@use "_variables" as *;
+@use '_variables' as *;
 
 .container {
     width: $mediascreen-xl;
@@ -17,13 +17,15 @@
 }
 
 @media screen and (max-width: $mediascreen-xl) {
-    .container, .container--large {
+    .container,
+    .container--large {
         width: $mediascreen-m;
     }
 }
 
 @media screen and (max-width: $mediascreen-m) {
-    .container, .container--large {
+    .container,
+    .container--large {
         width: 90%;
     }
 }
